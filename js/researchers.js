@@ -15,9 +15,7 @@ window.onload = function () {
         content += '<input id = "search-box" placeholder = "Search Researchers...">'+
                     '<button id = "search-button" type = "submit"><i class="fa fa-search"></i></button>'+
                 '<br><span id = "search-box-results"></span>';
-        console.log(R_areas.value);
         let getAreas = getUniqueResearchAreas(R_areas.value);
-        console.log(getAreas);
         content += '<div id = "research-area-tabs"><ul class="nav nav-pills">';
         content+='<li class="nav-item">' +
             '<a onclick= "clearsearch2()" class="nav-link" aria-current="page" >'+"All"+'</a></li>';

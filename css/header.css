@@ -21,10 +21,14 @@
 .header-title {
     background-color: #000e2f;
     color: white;
-    height: 4em;
+    height: 3em;
+    font-size: 30px;
+    padding-left: 30px;
+    font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
 }
 
-.position-temp {
+
+/* .position-temp {
     position: absolute;
     display: block;
-}
+} */

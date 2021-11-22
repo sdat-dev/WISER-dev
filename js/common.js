@@ -16,6 +16,7 @@ let addTopNav = function (page, markactive = true, extraindirection = false) {
     toggler.setAttribute("aria-label", "Toggle navigation");
     let span = document.createElement("span");
     span.classList.add("navbar-toggler-icon");
+    toggler.appendChild(span);
     topnav.appendChild(toggler);
 
     let navcontent = document.createElement("div");
@@ -50,15 +51,17 @@ let addTopNav = function (page, markactive = true, extraindirection = false) {
         navItemlink.innerText =  item.item;
 
         if (item.hasOwnProperty('subItems')){
-            navItemlink.classList.add("dropdown");
+            navItem.classList.add("dropdown");
             navItemlink.classList.add("dropdown-toggle");
             navItemlink.setAttribute("id","navbarDropdown");
-            navItemlink.setAttribute("role","button");
             navItemlink.setAttribute("data-toggle","dropdown");
             navItemlink.setAttribute("aria-haspopup","true");
             navItemlink.setAttribute("aria-expanded","false");
+            navItemlink.onclick = function(){
+                location.href = this.getAttribute("href");
+                this.nextSibling.classList.remove("show");
+            };
             navItem.appendChild(navItemlink);
-
             let dropdowndiv = document.createElement("div");
             dropdowndiv.classList.add("dropdown-menu")
             dropdowndiv.setAttribute("aria-labelledby","navbarDropdown");
@@ -76,6 +79,14 @@ let addTopNav = function (page, markactive = true, extraindirection = false) {
                 dropdowndiv.appendChild(subNavItem);
             }
             navItem.appendChild(dropdowndiv);
+            navItem.onmouseenter = function(){
+                dropdown =  this.getElementsByClassName("dropdown-menu")[0];
+                dropdown.classList.add("show");
+            }
+            navItem.onmouseleave = function(){
+                dropdown =  this.getElementsByClassName("dropdown-menu")[0];
+                dropdown.classList.remove("show");
+            }
         } else {
             navItem.appendChild(navItemlink);
         }
@@ -428,3 +439,4 @@ let formatPara = function(text){
     }
     return result;
 }
+

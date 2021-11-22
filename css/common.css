@@ -588,6 +588,14 @@ Primary use:    Common.css file used for styling header and
         bottom: 10%;
         width: 20%;
     }
+    .dropdown-menu{
+        display:none;
+        margin-top: 0px;
+    }
+
+    .dropdown-menu:hover{
+        display:block;
+    }
 }
 
 @media only screen and (min-width: 1192px) {

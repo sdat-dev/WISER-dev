@@ -144,7 +144,6 @@ Primary use:    Common.css file used for styling header and
 
 #page-header {
     width: 100%;
-    position: relative;
 }
 
 .learn-more-text {
@@ -666,6 +665,3 @@ Added carousel-fade hack to work for bootstrap 3.4.1
                 transform: translate3d(0, 0, 0);
       }
   }
-.bk-uconn-blue{
-    background-color: #000e2f!important;
-}

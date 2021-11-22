@@ -1,11 +1,30 @@
-#albany-logo-minerva{
-    height:30px;
+#albany-logo-minerva {
+    height: 30px;
 }
 
-#albany-logo-text{
-    height:30px;
+#albany-logo-text {
+    height: 30px;
 }
 
-#albany-logo-mobile{
-    height:30px;
+#albany-logo-mobile {
+    height: 30px;
+}
+
+.bk-uconn-blue {
+    background-color: #000e2f;
+}
+
+.header-logo {
+    background-color: #F39422;
+}
+
+.header-title {
+    background-color: #000e2f;
+    color: white;
+    height: 4em;
+}
+
+.position-temp {
+    position: absolute;
+    display: block;
 }

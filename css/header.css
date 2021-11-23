@@ -1,13 +1,14 @@
+#uconn-logo-minerva {
+    height: 30px;
+    float: right;
+    padding-right: 20px;
+
+}
+
 #albany-logo-minerva {
     height: 30px;
-}
+    padding-left: 20px;
 
-#albany-logo-text {
-    height: 30px;
-}
-
-#albany-logo-mobile {
-    height: 30px;
 }
 
 .bk-uconn-blue {
@@ -21,12 +22,17 @@
 .header-title {
     background-color: #000e2f;
     color: white;
-    height: 3em;
-    font-size: 30px;
-    padding-left: 30px;
-    font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
+    padding-left: 20px;
+    padding-top: 10px;
 }
 
+#header-above-title{
+    font-size: 1.1rem 'Milo',sans-serif;
+}
+
+#header-actual-title{
+    font: 3.5rem 'League Gothic',sans-serif;
+}
 
 /* .position-temp {
     position: absolute;

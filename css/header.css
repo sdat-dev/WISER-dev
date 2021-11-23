@@ -34,7 +34,8 @@
     font: 3.5rem 'League Gothic',sans-serif;
 }
 
-/* .position-temp {
-    position: absolute;
-    display: block;
-} */
+.position-temp {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}

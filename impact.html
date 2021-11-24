@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="https://www.albany.edu/sites/default/files/favicon_0.ico"
         type="image/vnd.microsoft.icon">
-    <title>WISER|University at Albany</title>
+    <title>WISER | University at Albany</title>
     <link rel="stylesheet" media="all"
         href="https://cdn.jsdelivr.net/npm/@unicorn-fail/drupal-bootstrap-styles@0.0.2/dist/3.4.0/8.x-3.x/drupal-bootstrap.min.css"
         integrity="sha512-tGFFYdzcicBwsd5EPO92iUIytu9UkQR3tLMbORL9sfi/WswiHkA1O3ri9yHW+5dXk18Rd+pluMeDBrPKSwNCvw=="
@@ -24,22 +24,27 @@
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
-    <div id="logo" class="bk-uconn-blue">
+    <div id="logo" class="header-logo">
         <a aria-label="University at Albany Home" href="https://www.albany.edu">
-            <img id="albany-logo-minerva" alt="UAlbany-Minerva" src="https://sdat-dev.github.io/resources/wiser/assets/images/top-menu/albany-logo-minerva.png">
-            <img id="albany-logo-mobile" alt="UAlbany" src="https://sdat-dev.github.io/resources/wiser/assets/images/top-menu/ualbany-logo.png">
+            <img id="albany-logo-minerva" alt="UAlbany" src="assets/images/top-menu/UAlbany-logo-header.png">
         </a>
         <a aria-label="University of Connecticut Home" href="https://uconn.edu/">
-            <img id="albany-logo-minerva" alt="Uconn-Minerva" src="https://sdat-dev.github.io/resources/wiser/assets/images/top-menu/uconn.png">
-        </a>
-        <a href="#">
-            <img id="albany-logo-text" alt="WISER IUCRC" src="https://sdat-dev.github.io/resources/wiser/assets/images/top-menu/wiser-logo.png">
+            <img id="uconn-logo-minerva" alt="Uconn" src="assets/images/top-menu/uconn-logo-alt.png">
         </a>
     </div>
-    <header id="navbar">
-    </header>
-    <div id="page-header">
+    <div class="header-title">
+        <div style="font: 1.1rem 'Milo',sans-serif;">THE WEATHER INNOVATION, SMART ENERGY & RESILIENCE</div>
+        <div style="font: 3.5rem 'League Gothic',sans-serif">WISER IUCRC</div>
+    </div>
+    <div class="position-temp">
+        <header id="navbar" style="padding-left: 10px;">
+        </header>
+    </div>
+
+    <div>
+        <img id="albany-logo-minerva" alt="UAlbany" src="assets/images/top-menu/header-other-pages.jpg">
     </div>
     <div class="container">
         <section class="content-wrapper">
@@ -64,7 +69,10 @@
         crossorigin="anonymous"></script>
     <script src="js/common.js"></script>
 
-	<script>addTopNav("Impact")</script>
-	<script src="js/impact.js"></script>
+    <script>
+        addTopNav("Impact")
+    </script>
+    <script src="js/impact.js"></script>
 </body>
+
 </html>

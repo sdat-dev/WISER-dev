@@ -8,19 +8,21 @@ Primary use:    footer.css file used for styling components
 -------------------------------------------------------------------*/
 
 
-.region-content p a, .region-below-content p a, .region-above-content p a, footer.footer a {
-    background-image: linear-gradient(120deg, #edba32 0%, #edba32 100%);
+footer.footer a {
+    background-image: linear-gradient(120deg, #F39422 0%, #F39422 100%);
     background-repeat: no-repeat;
     background-size: 100% 0.2em;
     background-position: 0 106%;
     transition: background-size 0.15s ease-in;
-    color: #444;
 }
 
-.region-content p a:hover, .region-below-content p a:hover, .region-above-content p a:hover, footer.footer a:hover {
+footer.footer a:hover {
     background-size: 105% 105%;
     cursor: pointer;
+    color: #000e2f !important;
+    font-weight: bold;
 }
+
 .news-center-view-display .view-footer {
     padding-top: 1rem;
     text-align: center;
@@ -34,19 +36,19 @@ Primary use:    footer.css file used for styling components
 footer.footer {
     padding: 0;
     color: white;
-    background-color: #222;
+    background-color: #000e2f;
     margin-top: 0px;
 }
 
 footer.footer .footer-new {
     position: relative;
-    background: radial-gradient(ellipse at center, rgba(0, 0, 0, .7) 0%, rgba(0, 0, 0, 0) 90%), url('../assets/images/footer-logo.JPG');
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, .7) 0%, rgba(0, 0, 0, 0) 90%), url('../assets/images/footer/footer-test-1.jpg');
     padding: 5em 3em 1.5em 3em;
     min-height: 400px;
     background-size: cover;
     background-repeat: no-repeat;
-    
-    
+
+
 }
 
 footer.footer .footer-new a, footer.footer .footer-new p {
@@ -68,7 +70,7 @@ footer.footer .footer-icon {
 }
 
 footer.footer .footer-end {
-    background-color: #222;
+    background-color: #000e2f;
     color: #fff;
     font-size: .8em;
     font-weight: normal;
@@ -76,15 +78,6 @@ footer.footer .footer-end {
     margin-right: 5px;
     margin-left: 5px;
 }
-
-/* footer.footer .footer-end .address-phone {
-    padding: 2em 0 0;
-}
-
-footer.footer .footer-end .copyright {
-    padding: 0.5em 0 2em;
-
-} */
 
 footer.footer .footer-end a {
     color: #fff;
@@ -110,7 +103,7 @@ footer.footer .footer-new a, footer.footer .footer-new p {
     min-height: 1px;
 }
 
-.margin-zero{
+.margin-zero {
     margin: 0 0 0px !important;
 }
 
@@ -118,16 +111,20 @@ footer.footer .footer-new a, footer.footer .footer-new p {
     .col-sm-offset-0 {
         margin-left: 18%;
     }
+
     .col-12 {
         width: 75%;
     }
+
     .col-12 {
         width: 75%;
     }
+
     .address-phone {
         padding: 0.65em 1em;
         text-align: left;
     }
+
     .copyright {
         padding: 0.65em 1em;
         text-align: right;
@@ -138,13 +135,16 @@ footer.footer .footer-new a, footer.footer .footer-new p {
     .col-md-6 {
         width: 50%;
     }
+
     .col-md-offset-3 {
         margin-left: 33.333333%;
     }
+
     footer.footer .footer-end .address-phone {
         padding: 0.65em 1em;
         text-align: left;
     }
+
     footer.footer .footer-end .copyright {
         padding: 0.65em 1em;
         text-align: right;
@@ -155,13 +155,15 @@ footer.footer .footer-new a, footer.footer .footer-new p {
     .col-lg-4 {
         width: 33.33333333%;
     }
+
     .col-lg-offset-4 {
         margin-left: 33.33333333%;
     }
 
-    .img-responsive{
+    .img-responsive {
         max-width: 100%;
     }
+
     .footer.footer .footer-new p {
         max-width: 100%;
     }
@@ -172,6 +174,7 @@ footer.footer .footer-new a, footer.footer .footer-new p {
         padding: 0.65em 1em;
         text-align: center;
     }
+
     .address-phone {
         padding: 0.65em 1em;
         text-align: center;

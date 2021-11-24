@@ -5,6 +5,7 @@ Primary use:    Common.css file used for styling header and
                 common components across the SAFER website
 -------------------------------------------------------------------*/
 
+
 /*------------------------------------------------------------------
 [Layout]
 
@@ -32,8 +33,8 @@ Primary use:    Common.css file used for styling header and
     background: transparent;
 }
 
-*container{
-    margin:0 auto;
+*container {
+    margin: 0 auto;
 }
 
 .buffer {
@@ -174,7 +175,7 @@ Primary use:    Common.css file used for styling header and
 }
 
 #navbar-header {
-    background-color:#004C93;
+    background-color: #004C93;
     height: 100px;
     position: sticky;
     top: 0;
@@ -355,7 +356,8 @@ Primary use:    Common.css file used for styling header and
     height: 30px;
 }
 
-.list-preceding-paragraph, .zero-bottom-margin-paragraph {
+.list-preceding-paragraph,
+.zero-bottom-margin-paragraph {
     margin-bottom: 0px;
 }
 
@@ -462,13 +464,13 @@ Primary use:    Common.css file used for styling header and
     margin: 0 auto;
 }
 
-.grid-title{
+.grid-title {
     color: #efb310;
     text-transform: uppercase;
     text-align: center;
 }
 
-.grid-subtitle{
+.grid-subtitle {
     color: #FFFFFF;
     text-transform: uppercase;
     text-align: center;
@@ -499,7 +501,8 @@ Primary use:    Common.css file used for styling header and
     .main-content {
         padding-top: 20px;
     }
-    .main-content>ul, .main-content>ol {
+    .main-content>ul,
+    .main-content>ol {
         margin-left: 20px;
     }
     .content>#search-box {
@@ -526,7 +529,8 @@ Primary use:    Common.css file used for styling header and
         bottom: 10%;
         width: 20%;
     }
-    .main-content>ul, .main-content>ol {
+    .main-content>ul,
+    .main-content>ol {
         margin-left: 20px;
     }
     .content>#search-box {
@@ -587,13 +591,12 @@ Primary use:    Common.css file used for styling header and
         bottom: 10%;
         width: 20%;
     }
-    .dropdown-menu{
-        display:none;
+    .dropdown-menu {
+        display: none;
         margin-top: 0px;
     }
-
-    .dropdown-menu:hover{
-        display:block;
+    .dropdown-menu:hover {
+        display: block;
     }
 }
 
@@ -614,6 +617,7 @@ Primary use:    Common.css file used for styling header and
     }
 }
 
+
 /*
 
 Added carousel-fade hack to work for bootstrap 3.4.1
@@ -622,46 +626,47 @@ Added carousel-fade hack to work for bootstrap 3.4.1
 .carousel-fade .carousel-inner .item {
     opacity: 0;
     transition-property: opacity;
-  }
-  
-  .carousel-fade .carousel-inner .active {
+}
+
+.carousel-fade .carousel-inner .active {
     opacity: 1;
-  }
-  
-  .carousel-fade .carousel-inner .active.left,
-  .carousel-fade .carousel-inner .active.right {
+}
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
     left: 0;
     opacity: 0;
     z-index: 1;
-  }
-  
-  .carousel-fade .carousel-inner .next.left,
-  .carousel-fade .carousel-inner .prev.right {
-    opacity: 1;
-  }
-  
-  .carousel-fade .carousel-control {
-    z-index: 2;
-  }
+}
 
-  @media all and (transform-3d), (-webkit-transform-3d) {
-      .carousel-fade .carousel-inner > .item.next,
-      .carousel-fade .carousel-inner > .item.active.right {
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+    opacity: 1;
+}
+
+.carousel-fade .carousel-control {
+    z-index: 2;
+}
+
+@media all and (transform-3d),
+(-webkit-transform-3d) {
+    .carousel-fade .carousel-inner>.item.next,
+    .carousel-fade .carousel-inner>.item.active.right {
         opacity: 0;
         -webkit-transform: translate3d(0, 0, 0);
-                transform: translate3d(0, 0, 0);
-      }
-      .carousel-fade .carousel-inner > .item.prev,
-      .carousel-fade .carousel-inner > .item.active.left {
+        transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner>.item.prev,
+    .carousel-fade .carousel-inner>.item.active.left {
         opacity: 0;
         -webkit-transform: translate3d(0, 0, 0);
-                transform: translate3d(0, 0, 0);
-      }
-      .carousel-fade .carousel-inner > .item.next.left,
-      .carousel-fade .carousel-inner > .item.prev.right,
-      .carousel-fade .carousel-inner > .item.active {
+        transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner>.item.next.left,
+    .carousel-fade .carousel-inner>.item.prev.right,
+    .carousel-fade .carousel-inner>.item.active {
         opacity: 1;
         -webkit-transform: translate3d(0, 0, 0);
-                transform: translate3d(0, 0, 0);
-      }
-  }
+        transform: translate3d(0, 0, 0);
+    }
+}

@@ -326,7 +326,7 @@ let addheader = function (headers) {
         }
         else {
             content += '<img src="' + source + image + '" class="d-block w-100" alt="...">' +
-                '<div id = "landing-page-text-wrapper">' +
+                '<div id = "landing-page-text-wrapper-home">' +
                 '<h1>' + header1 + '</h1>' +
                 '<p>' + header2 + '</p>' +
                 '</div>' +

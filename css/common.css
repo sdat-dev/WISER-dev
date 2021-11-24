@@ -151,6 +151,11 @@ Primary use:    Common.css file used for styling header and
     width: 100%;
 }
 
+#page-header-1 {
+    width: 100%;
+}
+
+
 .learn-more-text {
     text-decoration: underline;
     color: #46166b;
@@ -548,6 +553,9 @@ Primary use:    Common.css file used for styling header and
 
 @media only screen and (max-width: 767px) {
     #page-header {
+        display: contents;
+    }
+    #page-header1 {
         display: contents;
     }
 }

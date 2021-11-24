@@ -461,4 +461,5 @@ let formatPara = function(text){
     }
     return result;
 }
+addfooter();
 

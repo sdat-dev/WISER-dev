@@ -37,6 +37,10 @@ Primary use:    Common.css file used for styling header and
     margin: 0 auto;
 }
 
+.main-container{
+    padding: 0px 70px 35px 70px;
+}
+
 .buffer {
     height: 100px;
     width: 100%;

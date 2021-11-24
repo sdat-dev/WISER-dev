@@ -8,18 +8,19 @@ Primary use:    footer.css file used for styling components
 -------------------------------------------------------------------*/
 
 
-.region-content p a, .region-below-content p a, .region-above-content p a, footer.footer a {
-    background-image: linear-gradient(120deg, #edba32 0%, #edba32 100%);
+footer.footer a {
+    background-image: linear-gradient(120deg, #F39422 0%, #F39422 100%);
     background-repeat: no-repeat;
     background-size: 100% 0.2em;
     background-position: 0 106%;
     transition: background-size 0.15s ease-in;
-    color: #444;
 }
 
-.region-content p a:hover, .region-below-content p a:hover, .region-above-content p a:hover, footer.footer a:hover {
+footer.footer a:hover {
     background-size: 105% 105%;
     cursor: pointer;
+    color: #000e2f !important;
+    font-weight: bold;
 }
 
 .news-center-view-display .view-footer {

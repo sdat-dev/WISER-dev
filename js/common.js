@@ -301,39 +301,56 @@ let addheader = function (headers) {
     let image = "";
     let header1 = "";
     let header2 = "";
-
-    content += '<div class="carousel slide" data-ride="carousel">' +
+    let item = [];
+    if ((window.location.href).includes('home.html')) {    
+        content += '<div class="carousel slide" data-ride="carousel">' +
         '<div class="carousel-inner">';
-    for (var i = 0; i < headers.length; i++) {
-        image = typeof headers[i].logo != 'undefined' && headers[i].logo != '' ? headers[i].logo : image;
-        header1 = typeof headers[i].content != 'undefined' && headers[i].content != '' ? headers[i].content : header1;
-        header2 = typeof headers[i].subcontent != 'undefined' && headers[i].subcontent != '' ? headers[i].subcontent : header2;
-        let source = 'https://sdat-dev.github.io/resources/wiser/assets/images/headers/' + (typeof headers[i].source != 'undefined' && headers[i].source != '' ? headers[i].source + '/' : '');
-        if (i == 0) {
-            content += '<div class="carousel-item active">';
-        }
-        else {
-            content += '<div class="carousel-item">';
-        }
-        if (header1 == '') {
-            content += '<img src="' + source + image + '" class="d-block w-100" alt="...">' +
+        for (var i = 0; i < headers.length; i++) {
+            image = typeof headers[i].logo != 'undefined' && headers[i].logo != '' ? headers[i].logo : image;
+            header1 = typeof headers[i].content != 'undefined' && headers[i].content != '' ? headers[i].content : header1;
+            header2 = typeof headers[i].subcontent != 'undefined' && headers[i].subcontent != '' ? headers[i].subcontent : header2;
+            let source = 'https://sdat-dev.github.io/resources/wiser/assets/images/headers/' + (typeof headers[i].source != 'undefined' && headers[i].source != '' ? headers[i].source + '/' : '');
+            if (i == 0) {
+                content += '<div class="carousel-item active">';
+            }
+            else {
+                content += '<div class="carousel-item">';
+            }
+            if (header1 == '') {
+                content += '<img src="' + source + image + '" class="d-block w-100" alt="...">' +
+                    '</div>';
+            }
+            else if (header1.includes('link')) {
+                content += '<a target = "_blank" href="https://albany.az1.qualtrics.com/jfe/form/SV_7Vw1AmKqr14FT25"> <img src="' + source + image + '" class="d-block w-100" alt="..."></a>' +
+                    '</div>';
+            }   
+            else {
+                content += '<img src="' + source + image + '" class="d-block w-100" alt="...">' +
+                    '<div id = "landing-page-text-wrapper-home">' +
+                    '<h1>' + header1 + '</h1>' +
+                    '<p>' + header2 + '</p>' +
+                    '</div>' +
                 '</div>';
+            }   
         }
-        else if (header1.includes('link')) {
-            content += '<a target = "_blank" href="https://albany.az1.qualtrics.com/jfe/form/SV_7Vw1AmKqr14FT25"> <img src="' + source + image + '" class="d-block w-100" alt="..."></a>' +
-                '</div>';
-        }
-        else {
-            content += '<img src="' + source + image + '" class="d-block w-100" alt="...">' +
-                '<div id = "landing-page-text-wrapper-home">' +
-                '<h1>' + header1 + '</h1>' +
-                '<p>' + header2 + '</p>' +
-                '</div>' +
-                '</div>';
-        }
-    }
     content += '</div></div>';
+    }
+    else {
+        content +=
+        '<div id="page-header">'+
+            '<div class="carousel-inner">'+
+                '<div class="carousel-item active"><img src="https://sdat-dev.github.io/WISER-dev//assets/images/top-menu/header-other-pages.jpg"'+
+                    'class="d-block w-100" style="object-fit: cover; height: 250px;" alt="...">'+
+                    '<div id="landing-page-text-wrapper">'+
+                        '<h1>IMPACT</h1>'+
+                        '<p>Placeholder sub-title text</p>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'+
+        '</div>';
+    }
     header.innerHTML = content;
+
 }
 
 addfooter = function (relativepath = ".") {

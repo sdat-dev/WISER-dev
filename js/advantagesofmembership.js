@@ -13,6 +13,7 @@ request.onload = function () {
     let contentElement = document.createElement('div');
     contentElement.classList.add('content');
     contentElement.innerHTML = getContent(webelements);
+    console.log(contentElement.innerHTML = getContent(webelements));
     maincontentContainer.appendChild(contentElement);
     addfooter();
 }

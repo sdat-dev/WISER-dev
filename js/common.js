@@ -336,19 +336,25 @@ let addheader = function (headers) {
     content += '</div></div>';
     }
     else {
+        for (var i = 0; i < headers.length; i++) {
+        image = typeof headers[i].logo != 'undefined' && headers[i].logo != '' ? headers[i].logo : image;
+        header1 = typeof headers[i].content != 'undefined' && headers[i].content != '' ? headers[i].content : header1;
+        header2 = typeof headers[i].subcontent != 'undefined' && headers[i].subcontent != '' ? headers[i].subcontent : header2;
+        let source = 'https://sdat-dev.github.io/WISER-dev//assets/images/top-menu/' + (typeof headers[i].source != 'undefined' && headers[i].source != '' ? headers[i].source + '/' : '');
+
         content +=
         '<div id="page-header">'+
             '<div class="carousel-inner">'+
-                '<div class="carousel-item active"><img src="https://sdat-dev.github.io/WISER-dev//assets/images/top-menu/header-other-pages.jpg"'+
-                    'class="d-block w-100" style="object-fit: cover; height: 250px;" alt="...">'+
+                '<div class="carousel-item active"><img src="' + source + image + '" class="d-block w-100" '+
+                    'style="object-fit: cover; height: 250px;"alt="...">' +
                     '<div id="landing-page-text-wrapper">'+
-                        '<h1>IMPACT</h1>'+
-                        '<p>Placeholder sub-title text</p>'+
+                        '<h1>' + header1 + '</h1>' +
+                        '<p>' + header2 + '</p>' +
                     '</div>'+
                 '</div>'+
             '</div>'+
         '</div>';
-    }
+    }}
     header.innerHTML = content;
 
 }

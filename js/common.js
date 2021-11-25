@@ -320,7 +320,6 @@ let addheader = function (headers) {
                 '</div>';
         }
         else if (header1.includes('link')) {
-            console.log("else if");
             content += '<a target = "_blank" href="https://albany.az1.qualtrics.com/jfe/form/SV_7Vw1AmKqr14FT25"> <img src="' + source + image + '" class="d-block w-100" alt="..."></a>' +
                 '</div>';
         }

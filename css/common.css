@@ -279,6 +279,7 @@ Primary use:    Common.css file used for styling header and
 
 .sub-list>li {
     padding-left: 10px;
+    font-style: italic;
 }
 
 .purple-font {

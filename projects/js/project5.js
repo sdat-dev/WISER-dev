@@ -15,7 +15,7 @@ request.onload = function () {
     contentElement.innerHTML = getContent(data.webelements);
     maincontentContainer.appendChild(contentElement);
     contentElement = document.createElement('div');
-    contentElement.classList.add('project-team');
+    contentElement.classList.add('display-flex');
     contentElement.innerHTML = buildteam(data.members);
     maincontentContainer.appendChild(contentElement);
     addfooter();

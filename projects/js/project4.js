@@ -15,7 +15,7 @@ request.onload = function () {
     contentElement.innerHTML = getContent(data.webelements);
     maincontentContainer.appendChild(contentElement);
     contentElement = document.createElement('div');
-    contentElement.classList.add('project-team');
+    contentElement.classList.add('display-flex');
     contentElement.innerHTML = buildteam(data.members);
     maincontentContainer.appendChild(contentElement);
     addfooter();
@@ -25,7 +25,7 @@ let buildteam = function(members){
     content ="";
     for (let i = 0; i < members.length; i++) {
         let member = members[i];
-        content += '<div class = "col-lg-3 col-md-4 col-sm-6" style="height: 500px;">'+
+        content += '<div class = "col-lg-3 col-md-4 col-sm-6" style="height: 300px;">'+
                     '<a href = "../speakers/'+ member.link+'">'+
                     '<p class = "speakers-info">'+
                     '<img class = "speakers-img" style="height: 200.887px; width: 200.887px; border-radius: 50%;" src= "assets/images/Speakers/'+ member.photo+'" />'+

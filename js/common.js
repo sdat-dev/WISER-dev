@@ -340,7 +340,7 @@ let addheader = function (headers) {
         image = typeof headers[i].logo != 'undefined' && headers[i].logo != '' ? headers[i].logo : image;
         header1 = typeof headers[i].content != 'undefined' && headers[i].content != '' ? headers[i].content : header1;
         header2 = typeof headers[i].subcontent != 'undefined' && headers[i].subcontent != '' ? headers[i].subcontent : header2;
-        let source = 'https://sdat-dev.github.io/WISER-dev//assets/images/top-menu/' + (typeof headers[i].source != 'undefined' && headers[i].source != '' ? headers[i].source + '/' : '');
+        let source = 'https://sdat-dev.github.io/WISER-dev/assets/images/top-menu/' + (typeof headers[i].source != 'undefined' && headers[i].source != '' ? headers[i].source + '/' : '');
 
         content +=
         '<div id="page-header">'+
@@ -375,7 +375,7 @@ addfooter = function (relativepath = ".") {
                                     '<td>'+
                                         '<div class="col-12 col-sm-offset-0 col-md-8 col-md-offset-3 col-lg-8 col-lg-offset-4">'+
                                             '<a target=" _blank" href="https://www.albany.edu/">'+
-                                                '<img alt="University at Albany Logo" class=" img-responsive footer-logo" height="39" src="assets/images/footer/ualbany-footer-logo.png" typeof="Image" />'+
+                                                '<img alt="University at Albany Logo" class=" img-responsive footer-logo" height="39" src="https://sdat-dev.github.io/WISER-dev/assets/images/footer/ualbany-footer-logo.png" typeof="Image" />'+
                                             '</a>'+
                                             '<p>'+
                                                 '<a target="_blank" href="https://www.facebook.com/universityatalbany"><span class="fab fa-facebook-f footer-icon" role="img" aria-label="Facebook Icon"></span><span class="sr-only">facebook</span></a>'+
@@ -391,7 +391,7 @@ addfooter = function (relativepath = ".") {
                                         '<div class="col-12 col-sm-offset-0 col-md-8 col-md-offset-3 col-lg-8 col-lg-offset-4" style="padding-left: 100px;margin-left: 0px;">'+
                                             '<a target="_blank" href="https://www.uconn.edu/">'+
                                                 '<img alt="University of Connecticut Logo" style="'+
-                                                'width: 2000px;" class=" img-responsive footer-logo" height="39" src="assets/images/footer/uconn-footer-logo.png" typeof="Image" />'+
+                                                'width: 2000px;" class=" img-responsive footer-logo" height="39" src="https://sdat-dev.github.io/WISER-dev/assets/images/footer/uconn-footer-logo.png" typeof="Image" />'+
                                             '</a>'+
                                             '<p>'+
                                                 '<a target="_blank" href="https://www.facebook.com/UConn/"><span class="fab fa-facebook-f footer-icon" role="img" aria-label="Facebook Icon"></span><span class="sr-only">facebook</span></a>'+

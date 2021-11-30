@@ -38,7 +38,7 @@ Primary use:    Common.css file used for styling header and
 }
 
 .main-container{
-    padding: 0px 70px 35px 70px;
+    padding: 0px 170px 35px 170px;
 }
 
 .buffer {
@@ -279,6 +279,7 @@ Primary use:    Common.css file used for styling header and
 
 .sub-list>li {
     padding-left: 10px;
+    font-style: italic;
 }
 
 .purple-font {
@@ -569,6 +570,7 @@ Primary use:    Common.css file used for styling header and
     #landing-page-text-wrapper {
         bottom: 10%;
         width: 40%;
+        padding-left: 90px;
     }
     #landing-page-text-wrapper>h1 {
         font-size: 6vw;

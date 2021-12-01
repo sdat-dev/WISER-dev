@@ -261,10 +261,10 @@ let getContent = function (webelements) {
                 content += '<div class = "display-flex">';
                 logostart = false;
             }
-            content += '<div class = "col-xl-4 col-lg-4 col-md-4">' +
+            content += '<div class = "col-xl-4 col-lg-4 col-md-4" style="text-align: center;padding-bottom: 10px;">' +
                 '<a target = "_blank" href = "' + element.source + '">' +
                 '<div class = "home-logo-container">' +
-                '<img class = "home-logo" src = "https://sdat-dev.github.io/resources/wiser/assets/images/' + element.logo + '">' +
+                '<img class = "home-logo" style = "width: 200px;height: 200px;border: 5px solid #f2b368;" src = "assets/images/top-menu/Project-Square/' + element.logo + '">' +
                 '<p>' + element.content + '</p>' +
                 '</div>' +
                 '</a>' +

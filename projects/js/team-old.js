@@ -1,4 +1,4 @@
-let requestURL = "../data/project10.json";
+let requestURL = "../data/team-old.json";
 let request = new XMLHttpRequest();
 //getting content Element to append grants information
 let maincontentContainer = document.getElementsByClassName('main-content')[0];
@@ -25,7 +25,6 @@ let buildteam = function (members) {
     content = "";
     for (let i = 0; i < members.length; i++) {
         let member = members[i];
-
         content += '<div class = "col-lg-3 col-md-4 col-sm-6" style="height: 300px; padding-top: 20px;">' +
             '<a href = "../speakers/' + member.link + '">' +
             '<p class = "speakers-info">';

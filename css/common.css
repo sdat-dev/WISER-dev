@@ -248,6 +248,7 @@ Primary use:    Common.css file used for styling header and
 #landing-page-text-wrapper>h1 {
     color: white;
     text-transform: uppercase;
+    
 }
 
 #landing-page-text-wrapper>p {
@@ -694,6 +695,7 @@ Primary use:    Common.css file used for styling header and
     }
     #landing-page-text-wrapper>h1 {
         font-size: 3.2vw;
+        width: 1200px;
     }
     #landing-page-text-wrapper>p {
         font-size: 1.75vw;

@@ -6,7 +6,7 @@ Primary use:    academic-programs.css file used for styling content
 .accordion-header > .paragraph-question{
     font-family: 'News Cycle', Helvetica, Arial, sans-serif;
     font-weight: bold;
-    color: #46166b;
+    color: #000e2f ;
     padding: 8px 20px;
 }
 
@@ -35,7 +35,7 @@ Primary use:    academic-programs.css file used for styling content
 }
 
 button.btn-link, button.btn-link > .content-header-no-margin{
-    color: #46166b;
+    color: #000e2f ;
     background-color: rgba(0,0,0,0);
     margin-bottom: 0px;
 }
@@ -74,7 +74,7 @@ button.btn-link:focus{
 .panel-title > .btn{
     width: 100%;
     text-align: left;
-    color:#46166b;
+    color:#000e2f ;
     padding: 0px;
     background-color:transparent;
     font-size: 28px;
@@ -92,7 +92,7 @@ button.btn-link:focus{
 .panel-title > .btn-link:hover{
     color: white;
     text-decoration: none;
-    background-color:#46166b;
+    background-color:#000e2f ;
 }
 
 .panel-group > .panel{
@@ -111,7 +111,7 @@ button.btn-link:focus{
 }
 
 .card-header{
-    color:#46166b;
+    color:#000e2f ;
     padding: 0px;
     background-color: rgba(0,0,0,0);
     margin-top: 2px;
@@ -121,18 +121,18 @@ button.btn-link:focus{
 .card-header:hover button.btn-link, .card-header:hover, .card-header:hover .fa-chevron-down
 {
     color: white;
-    background-color: #46166b;
+    background-color: #000e2f ;
     text-decoration: none;
 }
 
 .btn:focus h3{
     text-decoration: none;
-    background-color: #46166b;
+    background-color: #000e2f ;
     color: white;
 }
 .btn:focus {
     text-decoration: none;
-    background-color: #46166b;
+    background-color: #000e2f ;
     color: white;
 }
 
@@ -147,21 +147,21 @@ button.btn-link:focus{
 .level2 .btn{
     background-color: #EEB211;
     font-size: 24px;
-    color: #46166b;
+    color: #000e2f ;
 }
 
 .level2 .btn:hover{
-    background-color: #46166b;
+    background-color: #000e2f ;
     color: white;
 }
 
 .level3 .btn{
     background-color: #d1d1d1;
     font-size: 20px;
-    color: #46166b;
+    color: #000e2f ;
 }
 
 .level3 .btn:hover{
-    background-color: #46166b !important;
+    background-color: #000e2f  !important;
     color: white;
 }

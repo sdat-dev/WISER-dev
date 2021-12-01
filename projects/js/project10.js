@@ -21,25 +21,30 @@ request.onload = function () {
     addfooter();
 }
 
-let buildteam = function(members){
-    content ="";
+let buildteam = function (members) {
+    content = "";
     for (let i = 0; i < members.length; i++) {
         let member = members[i];
-        content += '<div class = "col-lg-3 col-md-4 col-sm-6" style="height: 300px; padding-top: 20px;">'+
-                    '<a href = "../speakers/'+ member.link+'">'+
-                    '<p class = "speakers-info">'+
-                    '<img class = "speakers-img" style="height: 200.887px; width: 200.887px; border-radius: 50%;" src= "assets/images/Speakers/'+ member.photo+'" />'+
-                    '<br>'+
-                    '<span class = "title">'+
-                    '<strong>'+member.name+'</strong>'+
-                    '<br>'+
-                    '<span style="font-size: 16px;">'+
-                    member.university+
-                    '</span>'+
-                    '</span>'+
-                    '</p>'+
-                    '</a>'+
-                    '</div>';
+        content += '<div class = "col-lg-3 col-md-4 col-sm-6" style="height: 300px; padding-top: 20px;">' +
+            '<a href = "../speakers/' + member.link + '">' +
+            '<p class = "speakers-info">';
+        if (member.photo == undefined) {
+            content += '<img class = "speakers-img" style="height: 200.887px; width: 200.887px; border-radius: 50%;" src= "../assets/images/Researchers/placeholder.jpg" />';
+        }
+        else {
+            content += '<img class = "speakers-img" style="height: 200.887px; width: 200.887px; border-radius: 50%;" src= "../assets/images/Researchers/' + member.photo + '" />';
+        }
+        content += '<br>' +
+            '<span class = "title">' +
+            '<strong>' + member.name + '</strong>' +
+            '<br>' +
+            '<span style="font-size: 16px;">' +
+            member.university +
+            '</span>' +
+            '</span>' +
+            '</p>' +
+            '</a>' +
+            '</div>';
     }
     return content;
 }

@@ -169,7 +169,7 @@ Primary use:    Common.css file used for styling header and
 .no-link-decoration {
     color: #46166b;
     text-decoration: none !important;
-    font-size: 28px;
+    font-size: 25px;
 }
 
 .no-link-decoration:hover {

@@ -77,7 +77,7 @@ button.btn-link:focus{
     color:#000e2f ;
     padding: 0px;
     background-color:transparent;
-    font-size: 28px;
+    font-size: 20px;
     padding: 10px !important;
     border: none;
     text-transform: uppercase;
@@ -164,4 +164,8 @@ button.btn-link:focus{
 .level3 .btn:hover{
     background-color: #000e2f  !important;
     color: white;
+}
+
+.nav-item:active{
+    color: violet !important;
 }

@@ -10,6 +10,11 @@
     text-transform: uppercase !important;
 }
 
+.nav-item>li.active>a{
+    color: #fff !important;
+    background-color: #000e2f !important;
+    text-decoration: none !important;
+}
 
 .expert-info{
     margin-right: 15%;

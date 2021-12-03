@@ -76,8 +76,7 @@ let addTopNav = function (page, markactive = true, extraindirection = false) {
                 let sublink = subitems[j].link;
                 let subNavItem = document.createElement("a");
                 subNavItem.classList.add("dropdown-item");
-                if (extraindirection)
-                    sublink = '../' + sublink;
+                sublink = '../' + sublink;
                 subNavItem.setAttribute("href", sublink);
                 subNavItem.innerText = subitems[j].item;
                 if (page == subitems[j].item)

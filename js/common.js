@@ -37,7 +37,7 @@ let addTopNav = function (page, markactive = true, extraindirection = false) {
             link = item.link;
         }
 
-        if (extraindirection == false) {
+        if (extraindirection) {
             link = '../' + link;
         }
         if ((window.location.href).includes('/projects')) {

@@ -42,6 +42,7 @@ let addTopNav = function (page, markactive = true, extraindirection = false) {
         // }
         if ((window.location.href).includes('/projects')) {
             link = '../' + link;
+            console.log("link", link);
         }
 
         let navItem = document.createElement("li");
@@ -73,8 +74,8 @@ let addTopNav = function (page, markactive = true, extraindirection = false) {
             let subitems = item.subItems;
             for (var j = 0; j < subitems.length; j++) {
                 let sublink = subitems[j].link;
-                // if (extraindirection)
-                //     sublink = '../' + sublink;
+                if (!extraindirection)
+                    sublink = '../' + sublink;
                 let subNavItem = document.createElement("a");
                 subNavItem.classList.add("dropdown-item");
                 subNavItem.setAttribute("href", sublink);

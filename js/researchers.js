@@ -139,7 +139,6 @@ let buildUniversityResearcherElements = function (researchers) {
         if (researchers[i].FirstName == "") //skip of there is no first name
             continue;
         let researcher = researchers[i];
-        console.log(researcher.Photo);
         content += '<div id= ' + researcher.FirstName + researcher.LastName + ' class = "search-container expert-info">' ;
         if (researcher.Photo == undefined) {
             content += '<img class = "expert-image" src = "assets/images/Researchers/placeholder.jpg"/>' ;

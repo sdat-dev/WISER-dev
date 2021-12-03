@@ -424,8 +424,7 @@ Primary use:    Common.css file used for styling header and
     background-color: #000e2f;
     color: white;
     position: relative;
-    top: 2px;
-    left: -1px;
+    float: right;
 }
 
 .ualbany-logo-wrapper {
@@ -659,7 +658,7 @@ Primary use:    Common.css file used for styling header and
 
 @media only screen and (min-width: 992px) {
     .content>#search-box {
-        width: 510px;
+        width: 95%;
     }
     #landing-page-text-wrapper {
         bottom: 10%;

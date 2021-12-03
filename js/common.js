@@ -38,10 +38,10 @@ let addTopNav = function (page, markactive = true, extraindirection = false) {
         }
 
         // if (extraindirection) {
-        //     link = '../' + link;
+        //     link = 'https://sdat-dev.github.io/WISER-dev/' + link;
         // }
         if ((window.location.href).includes('/projects')) {
-            link = '../' + link;
+            link = 'https://sdat-dev.github.io/WISER-dev/' + link;
             console.log("link", link);
         }
 
@@ -77,7 +77,7 @@ let addTopNav = function (page, markactive = true, extraindirection = false) {
                 let subNavItem = document.createElement("a");
                 subNavItem.classList.add("dropdown-item");
                 if (extraindirection == false)
-                    sublink = '../' + sublink;
+                    sublink = 'https://sdat-dev.github.io/WISER-dev/' + sublink;
                 subNavItem.setAttribute("href", sublink);
                 subNavItem.innerText = subitems[j].item;
                 if (page == subitems[j].item)
@@ -126,7 +126,7 @@ let buildsubmenu = function (subitems, page, markactive, extraindirection) {
     for (var j = 0; j < subitems.length; j++) {
         let link = subitems[j].link;
         if (extraindirection)
-            link = '../' + link;
+            link = 'https://sdat-dev.github.io/WISER-dev/' + link;
         if (j == 0) {
             submenu += '<div class="first-sub-navigation-item hover-highlight"';
             if (page == subitems[j].item && markactive) {

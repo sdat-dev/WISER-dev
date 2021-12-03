@@ -6,6 +6,7 @@ window.onload = function () {
     let datarequest = axios.get(datarequestURL);
     let rAreaRequest = axios.get(rAreaRequestURL);
     let maincontentContainer = document.getElementsByClassName('main-content')[0];
+
     axios.all([request, datarequest, rAreaRequest]).then(axios.spread((...responses) => {
         let researcherscontent = responses[0].data;
         let researchers = responses[1].data;
@@ -18,7 +19,7 @@ window.onload = function () {
         let getAreas = getUniqueResearchAreas(R_areas.value);
         content += '<div id = "research-area-tabs"><ul class="nav nav-pills" style="font-weight: bold; text-transform: uppercase;padding-bottom: 5px;">' +
             '<li class="nav-item">' +
-            '<a onclick= "clearsearch2()" class="nav-link" aria-current="page" >' + "All" + '</a></li>';
+            '<a id="all-tab" onclick= "clearsearch2(true)" class="nav-link" aria-current="page" >' + "All" + '</a></li>';
         for (i = 0; i < getAreas.length; i++) {
             content += '<li class="nav-item">' +
                 '<a onclick= "searchfunction2(\'' + getAreas[i] + '\')" class="nav-link" aria-current="page" >' + getAreas[i] + '</a></li>';
@@ -38,6 +39,7 @@ window.onload = function () {
         var currentUrl = window.location.href;
         var divID = currentUrl.split("#", 2);
         //document.getElementById(divID[1].toString()).scrollIntoView(true); Need to figure it out
+        clearsearch2(true);
     })).catch(errors => {
         console.log(errors);
     })
@@ -348,7 +350,7 @@ searchfunction2 = function (searchtext) {
     let searchElems = document.getElementsByClassName('research-areas');
     let tabs = document.getElementsByClassName('tab-pane');
     let panels = document.getElementsByClassName("panel");
-    clearsearch2();
+    clearsearch2(false);
     if (panels.length > 0) {
         for (let i = 0; i < panels.length; i++) {
             panels[i].parentElement.style.display = "none";
@@ -383,8 +385,7 @@ searchfunction2 = function (searchtext) {
         }
     }
     else {
-
-        clearsearch2();
+        clearsearch2(false);
     }
 }
 
@@ -392,6 +393,7 @@ let clearsearch = function () {
     let tabs = document.getElementsByClassName('tab-pane');
     let panels = document.getElementsByClassName('panel');
     let searchElems = document.getElementsByClassName('search-container');
+
     for (let i = 0; i < tabs.length; i++) {
         let tabid = tabs[i].getAttribute("Id");
         let tabpill = document.getElementById('#' + tabid);
@@ -415,7 +417,7 @@ let clearsearch = function () {
     }
 }
 
-let clearsearch2 = function () {
+let clearsearch2 = function (flag) {
     let tabs = document.getElementsByClassName('tab-pane');
     let panels = document.getElementsByClassName('panel');
     let searchElems = document.getElementsByClassName('research-areas');
@@ -438,6 +440,20 @@ let clearsearch2 = function () {
     if (searchElems.length > 0) {
         for (let i = 0; i < searchElems.length; i++) {
             searchElems[i].parentElement.style.display = "block";
+        }
+    }
+
+    if (flag) {
+        for (let i = 0; i < tabs.length; i++) {
+            let tabpanels = tabs[i].getElementsByClassName('panel');
+            let count = 0;
+            for (let j = 0; j < tabpanels.length; j++) {
+                let researchElems = tabpanels[j].getElementsByClassName('research-areas');
+                count += researchElems.length;
+            }
+            let tabid = tabs[i].getAttribute("Id");
+            let tabpill = document.getElementById('#' + tabid);
+            tabpill.innerText = tabpill.innerText + ' (' + count + ')';
         }
     }
 }

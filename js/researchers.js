@@ -22,7 +22,7 @@ window.onload = function () {
             '<a id="all-tab" onclick= "clearsearch2(true)" class="nav-link" aria-current="page" >' + "All" + '</a></li>';
         for (i = 0; i < getAreas.length; i++) {
             content += '<li class="nav-item">' +
-                '<a onclick= "searchfunction2(\'' + getAreas[i] + '\')" class="nav-link" aria-current="page" >' + getAreas[i] + '</a></li>';
+                '<a id="' + i + '-tab" onclick= "searchfunction2(\'' + getAreas[i] + '\', ' + i + ')" class="nav-link" aria-current="page" >' + getAreas[i] + '</a></li>';
         }
         content += '</ul></div>';
         content += '<div id="experts-content">' + buildResearchersContent(researchers) + '</div>';
@@ -344,12 +344,20 @@ searchfunction = function () {
     }
 }
 
-searchfunction2 = function (searchtext) {
+searchfunction2 = function (searchtext, tabIndex) {
     //getting individual content withing sub-accordions to toggle display
     let fundingopps = document.getElementById("fundingopps");
     let searchElems = document.getElementsByClassName('research-areas');
     let tabs = document.getElementsByClassName('tab-pane');
     let panels = document.getElementsByClassName("panel");
+    for (let index = 0; index < 4; index++) {
+        let tabId = index + "-tab";
+        document.getElementById(tabId).classList.remove('active');
+    }
+    // add active class for current tabIndex
+    let currentId = tabIndex + "-tab";
+    document.getElementById(currentId).classList.add('active');
+
     clearsearch2(false);
     if (panels.length > 0) {
         for (let i = 0; i < panels.length; i++) {
@@ -418,6 +426,8 @@ let clearsearch = function () {
 }
 
 let clearsearch2 = function (flag) {
+    document.getElementById("all-tab").classList.remove('active');
+    
     let tabs = document.getElementsByClassName('tab-pane');
     let panels = document.getElementsByClassName('panel');
     let searchElems = document.getElementsByClassName('research-areas');
@@ -444,6 +454,11 @@ let clearsearch2 = function (flag) {
     }
 
     if (flag) {
+        for (let index = 0; index < 4; index++) {
+            let tabId = index + "-tab";
+            document.getElementById(tabId).classList.remove('active');
+        }
+        document.getElementById("all-tab").classList.add('active');
         for (let i = 0; i < tabs.length; i++) {
             let tabpanels = tabs[i].getElementsByClassName('panel');
             let count = 0;

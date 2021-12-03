@@ -1,6 +1,6 @@
 window.onload = function () {
     let requestURL = "data/researchers.json";
-    let datarequestURL = "https://sdat-dev.github.io/resources/wiser/data/researchersdata.json";
+    let datarequestURL = "data/researchersdata.json";
     let rAreaRequestURL = "https://sdat-dev.github.io/resources/wiser/data/WISER_Research_Areas.json";
     let request = axios.get(requestURL);
     let datarequest = axios.get(datarequestURL);

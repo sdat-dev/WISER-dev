@@ -25,9 +25,11 @@ let buildteam = function (members) {
     content = "";
     for (let i = 0; i < members.length; i++) {
         let member = members[i];
-        content += '<div class = "col-lg-3 col-md-4 col-sm-6" style="height: 300px; padding-top: 20px;">' +
-            '<a href = "../speakers/' + member.link + '">' +
-            '<p class = "speakers-info">';
+        content += '<div class = "col-lg-3 col-md-4 col-sm-6" style="height: 300px; padding-top: 20px;">' ;
+        if (member.link == undefined) {
+            '<a href = "../speakers/' + member.link + '">' ;
+        }
+        content += '<p class = "speakers-info">';
         if (member.email == undefined) {
             content += '<img class = "speakers-img" style="height: 200.887px; width: 200.887px; border-radius: 50%;" src= "../assets/images/Researchers/placeholder.jpg" />';
         }

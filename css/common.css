@@ -662,7 +662,7 @@ Primary use:    Common.css file used for styling header and
     }
     #landing-page-text-wrapper {
         bottom: 10%;
-        width: 40%;
+        width: 70%;
     }
     #landing-page-text-wrapper>h1 {
         font-size: 3.75vw;
@@ -673,7 +673,7 @@ Primary use:    Common.css file used for styling header and
     }
     #landing-page-text-wrapper-home {
         bottom: 10%;
-        width: 40%;
+        width: 70%;
     }
     #landing-page-text-wrapper-home>h1 {
         font-size: 3.75vw;
@@ -698,7 +698,7 @@ Primary use:    Common.css file used for styling header and
 @media only screen and (min-width: 1192px) {
     #landing-page-text-wrapper {
         bottom: 10%;
-        width: 40%;
+        width: 70%;
     }
     #landing-page-text-wrapper>h1 {
         font-size: 3.2vw;
@@ -713,7 +713,7 @@ Primary use:    Common.css file used for styling header and
     }
     #landing-page-text-wrapper-home {
         bottom: 10%;
-        width: 40%;
+        width: 70%;
     }
     #landing-page-text-wrapper-home>h1 {
         font-size: 3.2vw;

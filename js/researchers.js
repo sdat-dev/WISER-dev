@@ -16,7 +16,7 @@ window.onload = function () {
             '<button id = "search-button" type = "submit"><i class="fa fa-search"></i></button>' +
             '<br><span id = "search-box-results"></span>';
         let getAreas = getUniqueResearchAreas(R_areas.value);
-        content += '<div id = "research-area-tabs"><ul class="nav nav-pills" style="font-weight: bold; text-transform: uppercase;">' +
+        content += '<div id = "research-area-tabs"><ul class="nav nav-pills" style="font-weight: bold; text-transform: uppercase;padding-bottom: 5px;">' +
             '<li class="nav-item">' +
             '<a onclick= "clearsearch2()" class="nav-link" aria-current="page" >' + "All" + '</a></li>';
         for (i = 0; i < getAreas.length; i++) {

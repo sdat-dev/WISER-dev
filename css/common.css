@@ -191,6 +191,10 @@ Primary use:    Common.css file used for styling header and
     width: 100%;
     z-index: 2;
 }
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff !important;
+    background-color: #000e2f !important;
+}
 
 .sub-list {
     padding-left: 30px;

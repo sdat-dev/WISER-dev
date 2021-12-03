@@ -146,7 +146,7 @@ let buildUniversityResearcherElements = function (researchers) {
         }
             content += '<img class = "expert-image" src = "assets/images/Researchers/' + researcher.Email + '.jpg"/>' +
             '<h2 class = "content-header-no-margin">' + (researcher["UniversityInstitutionalPage"] == "" ? researcher.FirstName + ' ' + researcher.LastName : '<a class = "no-link-decoration" href = ' + getHttpLink(researcher["UniversityInstitutionalPage"]) + '>' + researcher.FirstName + ' ' + researcher.LastName + '</a>') + '</h2>' +
-            '<h5 class = "content-header-no-margin faculty-title" style = "font-size:20px;">' + (researcher.JobTitle != '' ? researcher.JobTitle + ',<br>' : '') + (researcher.Department != '' ? researcher.Department : '') + '</h5>' +
+            '<h5 class = "content-header-no-margin faculty-title" style = "font-size:20px;">' + (researcher.JobTitle != '' ? researcher.JobTitle + '<br>' : '') + (researcher.Department != '' ? researcher.Department : '') + '</h5>' +
             generateLogoContent(researcher) + '<p class = "faculty-description"><strong>Email: </strong> <a class = "email-link" href = mailto:' + researcher.Email +
             '>' + researcher.Email + '</a><br>' + (researcher.PhoneNumber != "" ? '<strong>Phone: </strong>' + formatPhone(researcher.PhoneNumber) + '<br>' : "") + '</p><p class="research-areas" id = "research-areas">' + '<strong>Research Areas: </strong>' +
             getResearchAreas(researcher) + '</p><p>' + '<strong>Research Interests: </strong>' + getResearchInterests(researcher) + '</p><p>' + researcher.ResearchExpertise + '</p>' + generateProjectsContent([researcher["Project1"], researcher["Project2"], researcher["Project3"], researcher["Project4"], researcher["Project5"]]) +
@@ -234,7 +234,7 @@ let buildOtherResearcherElements = function (researchers) {
             '<img class = "expert-image" src = "assets/images/Researchers/' + researcher.Email + '.jpg"/>' +
             '<h2 class = "content-header-no-margin">' + (researcher["UniversityInstitutionalPage"] == "" ? researcher.FirstName + ' ' + researcher.LastName : '<a class = "no-link-decoration" href = ' +
                 getHttpLink(researcher["UniversityInstitutionalPage"]) + '>' + researcher.FirstName + ' ' + researcher.LastName + '</a>') + '</h2>' +
-            '<h5 class = "content-header-no-margin faculty-title" style = "font-size:20px;">' + (researcher.JobTitle != '' ? researcher.JobTitle + ',<br>' : '') +
+            '<h5 class = "content-header-no-margin faculty-title" style = "font-size:20px;">' + (researcher.JobTitle != '' ? researcher.JobTitle + '<br>' : '') +
             (researcher.OtherCollegeSchoolDivision != '' ? researcher.OtherCollegeSchoolDivision + ',<br>' : '') + (researcher.Department != '' ? researcher.Department : '') + '</h5>' +
             generateLogoContent(researcher) + '<p class = "faculty-description"><strong>Email: </strong> <a class = "email-link" href = mailto:' + researcher.Email +
             '>' + researcher.Email + '</a><br>' + (researcher.PhoneNumber != "" ? '<strong>Phone: </strong>' + formatPhone(researcher.PhoneNumber) + '<br>' : "") + '</p><p class="research-areas" id = "research-areas">' + '<strong>Research Areas: </strong>' +

@@ -1,7 +1,7 @@
 let menuItems = [{ "item": "Home", "link": "home.html" }, { "item": "Impact", "link": "impact.html" }, { "item": "Uniqueness", "link": "uniqueness.html" }, { "item": "Research Areas", "link": "researchareas.html", "subItems": [{ "item": "Climate Change", "link": "climatechange.html" }, { "item": "Renewable Energy", "link": "renewableenergy.html" }, { "item": "Grid Resilience", "link": "gridresilience.html" }, { "item": "Outage Management", "link": "outagemanagement.html" }] }, { "item": "Researchers", "link": "researchers.html" }, { "item": "Advantages of Membership", "link": "advantagesofmembership.html" }, { "item": "Join", "link": "join.html" }, { "item": "Donate", "link": "donate.html" }, { "item": "Member Login", "link": "memberlogin.html" }]
 //Menu Start
 //What evet written  before '//SideMenu Start' will be relace with sidemenuItems in automation scripts
-let addTopNav = function (page, markactive = true, extraindirection = true) {
+let addTopNav = function (page, markactive = true, extraindirection = false) {
     let topnav = document.getElementById('navbar');
     topnav.classList.add("navbar-expand-lg");
     topnav.classList.add("navbar-dark");
@@ -37,9 +37,9 @@ let addTopNav = function (page, markactive = true, extraindirection = true) {
             link = item.link;
         }
 
-        if (extraindirection) {
-            link = '../' + link;
-        }
+        // if (extraindirection) {
+        //     link = '../' + link;
+        // }
         if ((window.location.href).includes('/projects')) {
             link = '../' + link;
         }

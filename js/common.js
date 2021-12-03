@@ -124,7 +124,7 @@ let buildsubmenu = function (subitems, page, markactive, extraindirection) {
     let submenu = '<div id="sub-navigation-bar">';
     for (var j = 0; j < subitems.length; j++) {
         let link = subitems[j].link;
-        if (!extraindirection)
+        if (extraindirection)
             link = '../' + link;
         if (j == 0) {
             submenu += '<div class="first-sub-navigation-item hover-highlight"';

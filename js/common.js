@@ -37,9 +37,6 @@ let addTopNav = function (page, markactive = true, extraindirection = false) {
             link = item.link;
         }
 
-        // if (extraindirection) {
-        //     link = '../' + link;
-        // }
         if ((window.location.href).includes('/projects')) {
             link = '../' + link;
         }
@@ -75,8 +72,7 @@ let addTopNav = function (page, markactive = true, extraindirection = false) {
                 let sublink = subitems[j].link;
                 let subNavItem = document.createElement("a");
                 subNavItem.classList.add("dropdown-item");
-                // if (extraindirection == false)
-                //     sublink = '../' + sublink;
+
                 if ((window.location.href).includes('/projects')) {
                     sublink = '../' + sublink;
                 }

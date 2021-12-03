@@ -76,7 +76,6 @@ let addTopNav = function (page, markactive = true, extraindirection = false) {
                 if ((window.location.href).includes('/projects')) {
                     sublink = '../' + sublink;
                 }
-                console.log(sublink);
 
                 subNavItem.setAttribute("href", sublink);
                 subNavItem.innerText = subitems[j].item;
@@ -267,7 +266,7 @@ let getContent = function (webelements) {
                 logostart = false;
             }
             content += '<div class = "col-xl-4 col-lg-4 col-md-4" style="text-align: center;padding-bottom: 10px;">' +
-                '<a target = "_blank" href = "' + element.source + '">' +
+                '<a href = "' + element.source + '">' +
                 '<div class = "home-logo-container">' +
                 '<img class = "home-logo" style = "width: 200px;height: 200px;border: 5px solid #f2b368;" src = "assets/images/top-menu/Project-Square/' + element.logo + '">' +
                 '<p>' + element.content + '</p>' +

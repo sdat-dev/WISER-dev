@@ -231,7 +231,11 @@ let buildOtherResearcherElements = function (researchers) {
             continue;
         let researcher = researchers[i];
         content += '<div class = "search-container expert-info">' +
+<<<<<<< HEAD
             '<img class = "expert-image" src = "../assets/images/Researchers/' + researcher.Email + '.jpg"/>' +
+=======
+            '<img class = "expert-image" src = "assets/images/Researchers/' + researcher.Email + '.jpg"/>' +
+>>>>>>> 7983767d7cb182bb2cbfac467369ce4dbd52c6a9
             '<h2 class = "content-header-no-margin">' + (researcher["UniversityInstitutionalPage"] == "" ? researcher.FirstName + ' ' + researcher.LastName : '<a class = "no-link-decoration" href = ' +
                 getHttpLink(researcher["UniversityInstitutionalPage"]) + '>' + researcher.FirstName + ' ' + researcher.LastName + '</a>') + '</h2>' +
             '<h5 class = "content-header-no-margin faculty-title" style = "font-size:20px;">' + (researcher.JobTitle != '' ? researcher.JobTitle + ',<br>' : '') +

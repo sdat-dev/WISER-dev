@@ -37,10 +37,11 @@ let addTopNav = function (page, markactive = true, extraindirection = false) {
             link = item.link;
         }
 
-        if (extraindirection == false || (window.location.href).includes('/projects')) {
-            if (!window.location.href.includes("github")) {
-                link = '../' + link;
-            }
+        if (extraindirection == false) {
+            link = '../' + link;
+        }
+        if ((window.location.href).includes('/projects')) {
+            link = '../' + link;
         }
 
         let navItem = document.createElement("li");
@@ -72,7 +73,7 @@ let addTopNav = function (page, markactive = true, extraindirection = false) {
             let subitems = item.subItems;
             for (var j = 0; j < subitems.length; j++) {
                 let sublink = subitems[j].link;
-                if (extraindirection)
+                if (!extraindirection)
                     sublink = '../' + sublink;
                 let subNavItem = document.createElement("a");
                 subNavItem.classList.add("dropdown-item");
@@ -123,7 +124,7 @@ let buildsubmenu = function (subitems, page, markactive, extraindirection) {
     let submenu = '<div id="sub-navigation-bar">';
     for (var j = 0; j < subitems.length; j++) {
         let link = subitems[j].link;
-        if (extraindirection)
+        if (!extraindirection)
             link = '../' + link;
         if (j == 0) {
             submenu += '<div class="first-sub-navigation-item hover-highlight"';

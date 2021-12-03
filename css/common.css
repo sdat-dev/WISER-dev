@@ -216,9 +216,10 @@ Primary use:    Common.css file used for styling header and
     background-color: rgb(0, 0, 0, 0.5);
     font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
     text-shadow: 3px 1px 2px black;
-    left: 5%;
+    left: 170px;
     padding: 10px;
     position: absolute;
+
 }
 
 #landing-page-text-wrapper-home>h1 {
@@ -588,6 +589,7 @@ Primary use:    Common.css file used for styling header and
     #landing-page-text-wrapper-home {
         bottom: 10%;
         width: 40%;
+
     }
     #landing-page-text-wrapper-home>h1 {
         font-size: 6vw;

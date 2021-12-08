@@ -164,7 +164,7 @@ let buildUniversityResearcherElements = function(researchers, scrollloc){
         if (researchers[i].FirstName == "") //skip of there is no first name
             continue;
         let researcher = researchers[i];
-        content += '<div id= ' + researcher.FirstName.trim() + researcher.LastName.trim() + ' class = "search-container expert-info">' ;
+        content += '<div id= ' + researcher.FirstName.replace(" ", "") + researcher.LastName.replace(" ","") + ' class = "search-container expert-info">' ;
         if (researcher.Photo == undefined) {
             content += '<img class = "expert-image" src = "assets/images/Researchers/placeholder.jpg"/>' ;
 
@@ -172,14 +172,15 @@ let buildUniversityResearcherElements = function(researchers, scrollloc){
         else{
             content += '<img class = "expert-image" src = "assets/images/Researchers/' + researcher.Email + '.jpg"/>' ;
         }
-            content += '<h2 class = "content-header-no-margin">' + (researcher["UniversityInstitutionalPage"] == "" ? researcher.FirstName + ' ' + researcher.LastName : '<a class = "no-link-decoration" href = ' + getHttpLink(researcher["UniversityInstitutionalPage"]) + '>' + researcher.FirstName + ' ' + researcher.LastName + '</a>') + '</h2>' +
-            '<h5 class = "content-header-no-margin faculty-title" style = "font-size:20px;">' + (researcher.JobTitle != '' ? researcher.JobTitle + '<br>' : '') + (researcher.Department != '' ? researcher.Department : '') + '</h5>' +
-            generateLogoContent(researcher) + '<p class = "faculty-description"><strong>Email: </strong> <a class = "email-link" href = mailto:' + researcher.Email +
-            '>' + researcher.Email + '</a><br>' + (researcher.PhoneNumber != "" ? '<strong>Phone: </strong>' + formatPhone(researcher.PhoneNumber) + '<br>' : "") + '</p><p class="research-areas" id = "research-areas">' + '<strong>Research Areas: </strong>' +
-            getResearchAreas(researcher) + '</p><p>' + '<strong>Research Interests: </strong>' + getResearchInterests(researcher) + '</p><p>' + researcher.ResearchExpertise + '</p>' + generateProjectsContent([researcher["Project1"], researcher["Project2"], researcher["Project3"], researcher["Project4"], researcher["Project5"]]) +
-            generateRelevantCourses([researcher["Course1"], researcher["Course2"], researcher["Course3"], researcher["Course4"], researcher["Course5"]]) + '</div>';
-            if(scrollloc == researcher.FirstName.trim() + researcher.LastName.trim())
-                value["expanded"] = true;
+
+        content += '<h2 class = "content-header-no-margin">' + (researcher["UniversityInstitutionalPage"] == "" ? researcher.FirstName + ' ' + researcher.LastName : '<a class = "no-link-decoration" href = ' + getHttpLink(researcher["UniversityInstitutionalPage"]) + '>' + researcher.FirstName + ' ' + researcher.LastName + '</a>') + '</h2>' +
+        '<h5 class = "content-header-no-margin faculty-title" style = "font-size:20px;">' + (researcher.JobTitle != '' ? researcher.JobTitle + '<br>' : '') + (researcher.Department != '' ? researcher.Department : '') + '</h5>' +
+        generateLogoContent(researcher) + '<p class = "faculty-description"><strong>Email: </strong> <a class = "email-link" href = mailto:' + researcher.Email +
+        '>' + researcher.Email + '</a><br>' + (researcher.PhoneNumber != "" ? '<strong>Phone: </strong>' + formatPhone(researcher.PhoneNumber) + '<br>' : "") + '</p><p class="research-areas" id = "research-areas">' + '<strong>Research Areas: </strong>' +
+        getResearchAreas(researcher) + '</p><p>' + '<strong>Research Interests: </strong>' + getResearchInterests(researcher) + '</p><p>' + researcher.ResearchExpertise + '</p>' + generateProjectsContent([researcher["Project1"], researcher["Project2"], researcher["Project3"], researcher["Project4"], researcher["Project5"]]) +
+        generateRelevantCourses([researcher["Course1"], researcher["Course2"], researcher["Course3"], researcher["Course4"], researcher["Course5"]]) + '</div>';
+        if(scrollloc == researcher.FirstName.trim() + researcher.LastName.trim())
+            value["expanded"] = true;
     }
     value["content"] = content;
     return value;
@@ -273,26 +274,26 @@ let buildOtherResearcherElements = function(researchers, scrollloc){
         if (researchers[i].FirstName == "") //skip if there is no first name
             continue;
         let researcher = researchers[i];
-        content += '<div id= ' + researcher.FirstName.trim() + researcher.LastName.trim() + ' class = "search-container expert-info">' ;
+        content += '<div id= ' + researcher.FirstName.replace(" ","") + researcher.LastName.replace(" ","") + ' class = "search-container expert-info">' ;
         if (researcher.Photo == undefined) {
             content += '<img class = "expert-image" src = "assets/images/Researchers/placeholder.jpg"/>' ;
         }
         else{
             content += '<img class = "expert-image" src = "assets/images/Researchers/' + researcher.Email + '.jpg"/>' ;
         }
-            '<h2 class = "content-header-no-margin">' + (researcher["UniversityInstitutionalPage"] == "" ? researcher.FirstName + ' ' + researcher.LastName : '<a class = "no-link-decoration" href = ' +
-                getHttpLink(researcher["UniversityInstitutionalPage"]) + '>' + researcher.FirstName + ' ' + researcher.LastName + '</a>') + '</h2>' +
-            '<h5 class = "content-header-no-margin faculty-title" style = "font-size:20px;">' + (researcher.JobTitle != '' ? researcher.JobTitle + '<br>' : '') +
-            (researcher.OtherCollegeSchoolDivision != '' ? researcher.OtherCollegeSchoolDivision + ',<br>' : '') + (researcher.Department != '' ? researcher.Department : '') + '</h5>' +
-            generateLogoContent(researcher) + '<p class = "faculty-description"><strong>Email: </strong> <a class = "email-link" href = mailto:' + researcher.Email +
-            '>' + researcher.Email + '</a><br>' + (researcher.PhoneNumber != "" ? '<strong>Phone: </strong>' + formatPhone(researcher.PhoneNumber) + '<br>' : "") + '</p><p class="research-areas" id = "research-areas">' + '<strong>Research Areas: </strong>' +
-            getResearchAreas(researcher) + '</p><p>' + '<strong>Research Interests: </strong>' +
-            getResearchInterests(researcher) + '</p><p>' + researcher.ResearchExpertise + '</p>' +
-            generateProjectsContent([researcher["Project1"], researcher["Project2"], researcher["Project3"], researcher["Project4"], researcher["Project5"]]) +
-            generateRelevantCourses([researcher["Course1"], researcher["Course2"], researcher["Course3"], researcher["Course4"], researcher["Course5"]]) + '</div>';
-            if(scrollloc == researcher.FirstName.trim() + researcher.LastName.trim())
-                value["expanded"] = true;
-    }
+        content += '<h2 class = "content-header-no-margin">' + (researcher["UniversityInstitutionalPage"] == "" ? researcher.FirstName + ' ' + researcher.LastName : '<a class = "no-link-decoration" href = ' +
+        getHttpLink(researcher["UniversityInstitutionalPage"]) + '>' + researcher.FirstName + ' ' + researcher.LastName + '</a>') + '</h2>' +
+        '<h5 class = "content-header-no-margin faculty-title" style = "font-size:20px;">' + (researcher.JobTitle != '' ? researcher.JobTitle + '<br>' : '') +
+        (researcher.OtherCollegeSchoolDivision != '' ? researcher.OtherCollegeSchoolDivision + ',<br>' : '') + (researcher.Department != '' ? researcher.Department : '') + '</h5>' +
+        generateLogoContent(researcher) + '<p class = "faculty-description"><strong>Email: </strong> <a class = "email-link" href = mailto:' + researcher.Email +
+        '>' + researcher.Email + '</a><br>' + (researcher.PhoneNumber != "" ? '<strong>Phone: </strong>' + formatPhone(researcher.PhoneNumber) + '<br>' : "") + '</p><p class="research-areas" id = "research-areas">' + '<strong>Research Areas: </strong>' +
+        getResearchAreas(researcher) + '</p><p>' + '<strong>Research Interests: </strong>' +
+        getResearchInterests(researcher) + '</p><p>' + researcher.ResearchExpertise + '</p>' +
+        generateProjectsContent([researcher["Project1"], researcher["Project2"], researcher["Project3"], researcher["Project4"], researcher["Project5"]]) +
+        generateRelevantCourses([researcher["Course1"], researcher["Course2"], researcher["Course3"], researcher["Course4"], researcher["Course5"]]) + '</div>';
+        if(scrollloc == researcher.FirstName.trim() + researcher.LastName.trim())
+            value["expanded"] = true;
+}
     value["content"] = content;
     return value;
 }

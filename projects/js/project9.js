@@ -26,8 +26,8 @@ let buildteam = function (members) {
     for (let i = 0; i < members.length; i++) {
         let member = members[i];
         content += '<div class = "col-lg-3 col-md-4 col-sm-6" style="height: 300px; padding-top: 20px;">' ;
-        if (member.link == undefined) {
-            '<a href = "../speakers/' + member.link + '">' ;
+        if (member.link != undefined) {
+            content += '<a href = "../' + member.link + '">' ;
         }
         content += '<p class = "speakers-info">';
         if (member.email == undefined) {

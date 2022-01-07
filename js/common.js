@@ -1,4 +1,4 @@
-let menuItems = [{"item":"Home","link":"home.html"},{"item":"Impact","link":"impact.html"},{"item":"Uniqueness","link":"uniqueness.html"},{"item":"Research Areas","link":"researchareas.html","subItems":[{"item":"Climate Change","link":"climatechange.html"},{"item":"Renewable Energy","link":"renewableenergy.html"},{"item":"Grid Resilience","link":"gridresilience.html"},{"item":"Outage Management","link":"outagemanagement.html"}]},{"item":"Researchers","link":"researchers.html"},{"item":"Planning Workshop","link":"planningworkshop.html"},{"item":"Advantages of Membership","link":"advantagesofmembership.html"},{"item":"Join","link":"join.html"},{"item":"Donate","link":"donate.html"},{"item":"Member Login","link":"memberlogin.html"}]
+let menuItems = [{"item":"Home","link":"home.html"},{"item":"Impact","link":"impact.html"},{"item":"Uniqueness","link":"uniqueness.html"},{"item":"Research Areas","link":"researchareas.html","subItems":[{"item":"Climate Change","link":"climatechange.html"},{"item":"Grid Resilience","link":"gridresilience.html"},{"item":"Renewable Energy","link":"renewableenergy.html"},{"item":"Outage Management","link":"outagemanagement.html"}]},{"item":"Researchers","link":"researchers.html"},{"item":"Planning Workshop","link":"planningworkshop.html"},{"item":"Advantages of Membership","link":"advantagesofmembership.html"},{"item":"Join","link":"join.html"},{"item":"Donate","link":"donate.html"},{"item":"Member Login","link":"memberlogin.html"}]
 //Menu Start
 //What evet written  before '//SideMenu Start' will be relace with sidemenuItems in automation scripts
 let addTopNav = function (page, markactive = true, extraindirection = false) {
@@ -172,31 +172,12 @@ let generateAccordionElem = function (level, collapseId, headerId, parentId, chi
     return accordionElem;
 }
 
-let generateOpenAccordionElem = function (level, collapseId, headerId, parentId, childId, header, accordionContent) {
-    var headerno = level + 2;
-    let accordionElem = '<div class="panel panel-default">' +
-        '<div class="panel-heading level' + level + '" role="tab" id="' + headerId + '">' +
-        '<h' + headerno + ' class = "panel-title">' +
-        '<button class="btn btn-link" type="button" data-toggle="collapse"  data-parent="#' + parentId + '" data-target="#' + collapseId + '" aria-expanded="true" aria-controls="' + collapseId + '">' +
-        header + '<i class="fas fa-chevron-up"></i>' +
-        '</button>' +
-        '</h' + headerno + '>' +
-        '</div>'
-        + '<div id="' + collapseId + '" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="' + headerId + '" aria-expanded="true">' +
-        '<div class="panel-body" id="' + childId + '">'
-        + accordionContent +
-        '</div>' +
-        '</div>' +
-        '</div>';
-    return accordionElem;
-}
-
-let createTabNavigation = function (distincttabs, tabname, activeindex=0) {
+let createTabNavigation = function (distincttabs, tabname) {
     let navigationContent = '<ul class="nav nav-pills" id="pills-tab" role="tablist">';
     for (let i = 0; i < distincttabs.length; i++) {
         let linkElement = '';
         let tabId = tabname + i.toString();
-        if (i == activeindex) {
+        if (i == 0) {
             linkElement = '<li role="presentation" class="active"><a href="#pills-' + tabId + '" id="#pills-' + tabId + '" aria-controls="pills-' + tabId + '" role="tab" data-toggle="pill">' + distincttabs[i] + '</a></li>';
         }
         else {
@@ -208,12 +189,12 @@ let createTabNavigation = function (distincttabs, tabname, activeindex=0) {
     return navigationContent;
 }
 
-let buildTabContent = function (distincttabs, tabname, tabContent, activeIndex) {
+let buildTabContent = function (distincttabs, tabname, tabContent) {
     let content = '<div class="tab-content" id="pills-tabContent">';
 
     for (let i = 0; i < distincttabs.length; i++) {
         let tabId = tabname + i.toString();
-        if (i == activeIndex) {
+        if (i == 0) {
             content += '<div class="tab-pane fade in active" id="pills-' + tabId + '" role="tabpanel">';
         }
         else {

@@ -305,7 +305,7 @@ let addheader = function (headers) {
     let item = [];
 
     if ((window.location.href).includes('home.html')) {
-        content += '<div class="carousel slide" data-ride="carousel">' +
+        content += '<div class="carousel w3-animate-opacity" data-ride="carousel">' +
             '<div class="carousel-inner">';
         for (var i = 0; i < headers.length; i++) {
             image = typeof headers[i].logo != 'undefined' && headers[i].logo != '' ? headers[i].logo : image;
@@ -313,10 +313,10 @@ let addheader = function (headers) {
             header2 = typeof headers[i].subcontent != 'undefined' && headers[i].subcontent != '' ? headers[i].subcontent : header2;
             let source = 'https://sdat-dev.github.io/resources/wiser/assets/images/headers/' + (typeof headers[i].source != 'undefined' && headers[i].source != '' ? headers[i].source + '/' : '');
             if (i == 0) {
-                content += '<div class="carousel-item active">';
+                content += '<div class="carousel-item active w3-animate-opacity">';
             }
             else {
-                content += '<div class="carousel-item">';
+                content += '<div class="carousel-item w3-animate-opacity">';
             }
             if (header1 == '') {
                 content += '<img src="' + source + image + '" class="d-block w-100" alt="...">' +

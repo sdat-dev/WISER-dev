@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
-<body>
+<body style="overflow: hidden;">
     <div id="logo" class="header-logo">
         <a aria-label="University at Albany Home" href="https://www.albany.edu">
             <img id="albany-logo-minerva" alt="UAlbany" src="assets/images/top-menu/UAlbany-logo-header.png">
@@ -40,12 +40,26 @@
     </div>
 
     <div id="page-header">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://sdat-dev.github.io/WISER-dev/assets/images/top-menu/planningworkshop.jpg" class="d-block w-100" style="object-fit: cover; height: 250px;" alt="...">
+                <div id="landing-page-text-wrapper">
+                    <h1>Planning Workshop</h1>
+                </div>
+            </div>
+        </div>
     </div>
     <section class="content-wrapper">
         <div class="display-flex">
             <div class="main-container">
                 <div class="main-content col-xs-12" style="line-height: 1.45;">
                     <h1 class="content-header">
+                        <div>
+                            <br/>
+                            <div id="iframe-wrapper" align="center" style="z-index: 0">
+                                <iframe id="external" src="https://newyorkmep.org/wiser">dada</iframe>
+                            </div>   
+                        </div>
                     </h1>
                 </div>
             </div>
@@ -53,6 +67,7 @@
     </section>
     <footer id="footer">
     </footer>
+
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -65,7 +80,9 @@
         crossorigin="anonymous"></script>
     <script src="js/common.js"></script>
 
-	<script>addTopNav("Planning Workshop")</script>
+
+
+    <script>addTopNav("Planning Workshop")</script>
 	<script src="js/planningworkshop.js"></script>
 </body>
 </html>

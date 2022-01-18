@@ -577,30 +577,31 @@ Primary use:    Common.css file used for styling header and
     .content>#search-box-results {
         margin-bottom: 30px;
     }
-
     .ualbany-logo {
         margin-left: 5%;
         width: 90%;
     }
-
     .body {
         width:fit-content;
     }
-    
     .header-title {
         text-align: center;
         padding-left: 5%;
         padding-right: 5%;
     }
-
     #navbar {
         padding-left: 0px;
         text-align: center;
     }
-
     .main-container {
         text-align: center;
         padding: 0px 20px 35px 20px;
+    }
+    .display-flex {
+        display: block;
+    }
+    .panel-title > .btn {
+        font-size: 75%;
     }
 }
 

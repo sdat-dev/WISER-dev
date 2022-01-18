@@ -172,12 +172,32 @@ let generateAccordionElem = function (level, collapseId, headerId, parentId, chi
     return accordionElem;
 }
 
-let createTabNavigation = function (distincttabs, tabname) {
+
+let generateOpenAccordionElem = function (level, collapseId, headerId, parentId, childId, header, accordionContent) {
+    var headerno = level + 2;
+    let accordionElem = '<div class="panel panel-default">' +
+        '<div class="panel-heading level' + level + '" role="tab" id="' + headerId + '">' +
+        '<h' + headerno + ' class = "panel-title">' +
+        '<button class="btn btn-link" type="button" data-toggle="collapse"  data-parent="#' + parentId + '" data-target="#' + collapseId + '" aria-expanded="true" aria-controls="' + collapseId + '">' +
+        header + '<i class="fas fa-chevron-up"></i>' +
+        '</button>' +
+        '</h' + headerno + '>' +
+        '</div>'
+        + '<div id="' + collapseId + '" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="' + headerId + '" aria-expanded="true">' +
+        '<div class="panel-body" id="' + childId + '">'
+        + accordionContent +
+        '</div>' +
+        '</div>' +
+        '</div>';
+    return accordionElem;
+}
+
+let createTabNavigation = function (distincttabs, tabname, activeindex=0) {
     let navigationContent = '<ul class="nav nav-pills" id="pills-tab" role="tablist">';
     for (let i = 0; i < distincttabs.length; i++) {
         let linkElement = '';
         let tabId = tabname + i.toString();
-        if (i == 0) {
+        if (i == activeindex) {
             linkElement = '<li role="presentation" class="active"><a href="#pills-' + tabId + '" id="#pills-' + tabId + '" aria-controls="pills-' + tabId + '" role="tab" data-toggle="pill">' + distincttabs[i] + '</a></li>';
         }
         else {
@@ -189,12 +209,12 @@ let createTabNavigation = function (distincttabs, tabname) {
     return navigationContent;
 }
 
-let buildTabContent = function (distincttabs, tabname, tabContent) {
+let buildTabContent = function (distincttabs, tabname, tabContent, activeIndex) {
     let content = '<div class="tab-content" id="pills-tabContent">';
 
     for (let i = 0; i < distincttabs.length; i++) {
         let tabId = tabname + i.toString();
-        if (i == 0) {
+        if (i == activeIndex) {
             content += '<div class="tab-pane fade in active" id="pills-' + tabId + '" role="tabpanel">';
         }
         else {

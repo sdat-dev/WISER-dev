@@ -47,8 +47,6 @@ footer.footer .footer-new {
     min-height: 400px;
     background-size: cover;
     background-repeat: no-repeat;
-
-
 }
 
 footer.footer .footer-new a, footer.footer .footer-new p {
@@ -178,5 +176,20 @@ footer.footer .footer-new a, footer.footer .footer-new p {
     .address-phone {
         padding: 0.65em 1em;
         text-align: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    footer.footer .footer-new {
+        position: relative;
+        background: radial-gradient(ellipse at center, rgba(0, 0, 0, .7) 0%, rgba(0, 0, 0, 0) 90%), url('../assets/images/footer/footer-test-1.jpg');
+        padding: 1.5em 1.5em 1.5em 1.5em;
+        min-height: 0px !important; 
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    footer.footer .footer-icon {
+        font-size: 0.85em !important;
+        padding: 0px .7em !important;
     }
 }

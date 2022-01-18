@@ -552,7 +552,7 @@ Primary use:    Common.css file used for styling header and
         width: 35%;
     }
     #landing-page-text-wrapper-home>h1 {
-        font-size: 6vw;
+        font-size: 5vw;
     }
     #landing-page-text-wrapper-home>p {
         display: none;
@@ -804,6 +804,7 @@ Added carousel-fade hack to work for bootstrap 3.4.1
     #landing-page-text-wrapper-home {
         bottom: 10%;
         left: 10px;
+        top: 10px;
         width: 35%;
     }
 

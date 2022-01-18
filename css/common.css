@@ -780,3 +780,36 @@ Added carousel-fade hack to work for bootstrap 3.4.1
         transform: translate3d(0, 0, 0);
     }
 }
+
+@media only screen and (max-width: 400px) {
+    .ualbany-logo {
+        margin-left: 5%;
+        width: 90%;
+    }
+
+    .body {
+        width:fit-content;
+    }
+    
+    .header-title {
+        text-align: center;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    #landing-page-text-wrapper-home {
+        bottom: 10%;
+        left: 10px;
+        width: 35%;
+    }
+
+    #navbar {
+        padding-left: 0px;
+        text-align: center;
+    }
+
+    .main-container {
+        text-align: center;
+        padding: 0px 20px 35px 20px;
+    }
+}

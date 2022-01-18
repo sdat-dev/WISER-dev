@@ -808,6 +808,10 @@ Added carousel-fade hack to work for bootstrap 3.4.1
         width: 35%;
     }
 
+    #landing-page-text-wrapper-home>h1 {
+        font-size: 5vw;
+    }
+
     #navbar {
         padding-left: 0px;
         text-align: center;

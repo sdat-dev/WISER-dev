@@ -1,13 +1,24 @@
-$( document ).ready(function() {
-    SetIframeSize();
-});
-
-// resize on window resize
-$(window).on('resize', function(){
-      SetIframeSize();
-});
-
-function SetIframeSize(){
-    $("#external").width($(window).width() - 200);
-    $("#external").height($(window).height() - 200);
+let requestURL = "data/planningworkshop.json";
+let request = new XMLHttpRequest();
+//getting content Element to append grants information
+let maincontentContainer = document.getElementsByClassName('main-content')[0];
+request.open('GET', requestURL);
+request.responseType = 'json';
+request.send();
+request.onload = function () {
+    let content = '';
+    const webelementsjson = request.response;
+    //condition for checking if browser is Internet Explorer
+    let webelements = ((false || !!document.documentMode)) ? JSON.parse(webelementsjson) : webelementsjson;
+    let contentElement = document.createElement('div');
+    contentElement.classList.add('content');
+    contentElement.innerHTML = getContent(webelements);
+    maincontentContainer.appendChild(contentElement);
+    addfooter();
 }
+
+$('.carousel').carousel({
+    pause: "false",
+    interval: 2000
+
+});

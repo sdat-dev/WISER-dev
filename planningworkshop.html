@@ -14,14 +14,14 @@
         integrity="sha512-tGFFYdzcicBwsd5EPO92iUIytu9UkQR3tLMbORL9sfi/WswiHkA1O3ri9yHW+5dXk18Rd+pluMeDBrPKSwNCvw=="
         crossorigin="anonymous" />
     <link rel="stylesheet" media="all" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
-<body style="overflow: hidden;">
+<body class="body">
     <div id="logo" class="header-logo">
         <a aria-label="University at Albany Home" href="https://www.albany.edu">
             <img id="albany-logo-minerva" alt="UAlbany" src="assets/images/top-menu/UAlbany-logo-header.png">
@@ -35,31 +35,17 @@
         <div style="font: 3.5rem 'League Gothic',sans-serif">WISER IUCRC (PLANNING)</div>
     </div>
     <div class="header-position">
-        <header id="navbar" style="padding-left: 160px;">
+        <header id="navbar">
         </header>
     </div>
 
     <div id="page-header">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://sdat-dev.github.io/WISER-dev/assets/images/top-menu/planningworkshop.jpg" class="d-block w-100" style="object-fit: cover; height: 250px;" alt="...">
-                <div id="landing-page-text-wrapper">
-                    <h1>Planning Workshop</h1>
-                </div>
-            </div>
-        </div>
     </div>
     <section class="content-wrapper">
         <div class="display-flex">
             <div class="main-container">
                 <div class="main-content col-xs-12" style="line-height: 1.45;">
                     <h1 class="content-header">
-                        <div>
-                            <br/>
-                            <div id="iframe-wrapper" style="z-index: 0">
-                                <iframe id="external" src="https://newyorkmep.org/wiser">dada</iframe>
-                            </div>   
-                        </div>
                     </h1>
                 </div>
             </div>
@@ -67,7 +53,6 @@
     </section>
     <footer id="footer">
     </footer>
-
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -80,9 +65,8 @@
         crossorigin="anonymous"></script>
     <script src="js/common.js"></script>
 
-
-
-    <script>addTopNav("Planning Workshop")</script>
+	<script>addTopNav("Planning Workshop")</script>
 	<script src="js/planningworkshop.js"></script>
+	<script src="js/iFrame.js"></script>
 </body>
 </html>

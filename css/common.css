@@ -549,6 +549,8 @@ Primary use:    Common.css file used for styling header and
     }
     #landing-page-text-wrapper-home {
         bottom: 10%;
+        left: 10px;
+        top: 10px;
         width: 35%;
     }
     #landing-page-text-wrapper-home>h1 {
@@ -574,6 +576,31 @@ Primary use:    Common.css file used for styling header and
     }
     .content>#search-box-results {
         margin-bottom: 30px;
+    }
+
+    .ualbany-logo {
+        margin-left: 5%;
+        width: 90%;
+    }
+
+    .body {
+        width:fit-content;
+    }
+    
+    .header-title {
+        text-align: center;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    #navbar {
+        padding-left: 0px;
+        text-align: center;
+    }
+
+    .main-container {
+        text-align: center;
+        padding: 0px 20px 35px 20px;
     }
 }
 
@@ -782,43 +809,5 @@ Added carousel-fade hack to work for bootstrap 3.4.1
         opacity: 1;
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
-    }
-}
-
-@media only screen and (max-width: 420px) {
-    .ualbany-logo {
-        margin-left: 5%;
-        width: 90%;
-    }
-
-    .body {
-        width:fit-content;
-    }
-    
-    .header-title {
-        text-align: center;
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-
-    #landing-page-text-wrapper-home {
-        bottom: 10%;
-        left: 10px;
-        top: 10px;
-        width: 35%;
-    }
-
-    #landing-page-text-wrapper-home>h1 {
-        font-size: 5vw;
-    }
-
-    #navbar {
-        padding-left: 0px;
-        text-align: center;
-    }
-
-    .main-container {
-        text-align: center;
-        padding: 0px 20px 35px 20px;
     }
 }

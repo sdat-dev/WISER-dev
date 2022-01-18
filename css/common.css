@@ -37,6 +37,10 @@ Primary use:    Common.css file used for styling header and
     margin: 0 auto;
 }
 
+.body {
+    width:fit-content;
+}
+
 .main-container{
     padding: 0px 170px 35px 170px;
 }
@@ -584,6 +588,7 @@ Primary use:    Common.css file used for styling header and
     .body {
         width:fit-content;
     }
+   
     .header-title {
         text-align: center;
         padding-left: 5%;

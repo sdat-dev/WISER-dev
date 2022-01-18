@@ -785,7 +785,7 @@ Added carousel-fade hack to work for bootstrap 3.4.1
     }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 420px) {
     .ualbany-logo {
         margin-left: 5%;
         width: 90%;

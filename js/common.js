@@ -172,7 +172,6 @@ let generateAccordionElem = function (level, collapseId, headerId, parentId, chi
     return accordionElem;
 }
 
-
 let generateOpenAccordionElem = function (level, collapseId, headerId, parentId, childId, header, accordionContent) {
     var headerno = level + 2;
     let accordionElem = '<div class="panel panel-default">' +

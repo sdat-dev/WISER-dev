@@ -192,4 +192,11 @@ footer.footer .footer-new a, footer.footer .footer-new p {
         font-size: 0.85em !important;
         padding: 0px .7em !important;
     }
+
+    footer.footer .footer-new a, footer.footer .footer-new p {
+        padding: 0em 0em 0em 0em;
+    }
+    footer.footer a {
+        background-image: none;
+    }
 }

@@ -13,7 +13,7 @@ $(document).ready(function() {
         $("#external").width($(window).width() - 50);
     }
     else{
-        $("#external").width($(window).width() - 40);
+        $("#external").width($(window).width() * 0.85);
     }
-    $("#external").height($(window).height() - 200);
+    //$("#external").height($(window).height() - 200);
 }

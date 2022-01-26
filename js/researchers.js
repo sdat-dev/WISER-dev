@@ -176,8 +176,16 @@ let buildUniversityResearcherElements = function(researchers, scrollloc){
         content += '<h2 class = "content-header-no-margin">' + (researcher["UniversityInstitutionalPage"] == "" ? researcher.FirstName + ' ' + researcher.LastName : '<a class = "no-link-decoration" href = ' + getHttpLink(researcher["UniversityInstitutionalPage"]) + '>' + researcher.FirstName + ' ' + researcher.LastName + '</a>') + '</h2>' +
         '<h5 class = "content-header-no-margin faculty-title" style = "font-size:20px;">' + (researcher.JobTitle != '' ? researcher.JobTitle + '<br>' : '') + (researcher.Department != '' ? researcher.Department : '') + '</h5>' +
         generateLogoContent(researcher) + '<p class = "faculty-description"><strong>Email: </strong> <a class = "email-link" href = mailto:' + researcher.Email +
-        '>' + researcher.Email + '</a><br>' + (researcher.PhoneNumber != "" ? '<strong>Phone: </strong>' + formatPhone(researcher.PhoneNumber) + '<br>' : "") + '</p><p class="research-areas" id = "research-areas">' + '<strong>Research Areas: </strong>' +
-        getResearchAreas(researcher) + '</p><p>' + '<strong>Research Interests: </strong>' + getResearchInterests(researcher) + '</p><p>' + researcher.ResearchExpertise + '</p>' + generateProjectsContent([researcher["Project1"], researcher["Project2"], researcher["Project3"], researcher["Project4"], researcher["Project5"]]) +
+        '>' + researcher.Email + '</a><br>' + (researcher.PhoneNumber != "" ? '<strong>Phone: </strong>' + formatPhone(researcher.PhoneNumber) + '<br>' : "") + '</p>';
+        if(getResearchAreas(researcher)!=null){
+            content += '<p class="research-areas" id = "research-areas">';
+            content += '<strong>Research Areas: </strong>' + getResearchAreas(researcher) + '</p>';
+        }
+        if(getResearchInterests(researcher)!=null){
+            content += '<p>'+'<strong>Research Interests: </strong>' + getResearchInterests(researcher)+'</p>';
+        }
+        content += '<p>' + researcher.ResearchExpertise + '</p>' +
+        generateProjectsContent([researcher["Project1"], researcher["Project2"], researcher["Project3"], researcher["Project4"], researcher["Project5"]]) +
         generateRelevantCourses([researcher["Course1"], researcher["Course2"], researcher["Course3"], researcher["Course4"], researcher["Course5"]]) + '</div>';
         if(scrollloc == researcher.FirstName.trim() + researcher.LastName.trim())
             value["expanded"] = true;
@@ -286,9 +294,15 @@ let buildOtherResearcherElements = function(researchers, scrollloc){
         '<h5 class = "content-header-no-margin faculty-title" style = "font-size:20px;">' + (researcher.JobTitle != '' ? researcher.JobTitle + '<br>' : '') +
         (researcher.OtherCollegeSchoolDivision != '' ? researcher.OtherCollegeSchoolDivision + ',<br>' : '') + (researcher.Department != '' ? researcher.Department : '') + '</h5>' +
         generateLogoContent(researcher) + '<p class = "faculty-description"><strong>Email: </strong> <a class = "email-link" href = mailto:' + researcher.Email +
-        '>' + researcher.Email + '</a><br>' + (researcher.PhoneNumber != "" ? '<strong>Phone: </strong>' + formatPhone(researcher.PhoneNumber) + '<br>' : "") + '</p><p class="research-areas" id = "research-areas">' + '<strong>Research Areas: </strong>' +
-        getResearchAreas(researcher) + '</p><p>' + '<strong>Research Interests: </strong>' +
-        getResearchInterests(researcher) + '</p><p>' + researcher.ResearchExpertise + '</p>' +
+        '>' + researcher.Email + '</a><br>' + (researcher.PhoneNumber != "" ? '<strong>Phone: </strong>' + formatPhone(researcher.PhoneNumber) + '<br>' : "") + '</p>';
+        if(getResearchAreas(researcher)!=null){
+            content += '<p class="research-areas" id = "research-areas">';
+            content += '<strong>Research Areas: </strong>' + getResearchAreas(researcher) + '</p>';
+        }
+        if(getResearchInterests(researcher)!=null){
+            content += '<p>'+'<strong>Research Interests: </strong>' + getResearchInterests(researcher)+'</p>';
+        }
+        content += '<p>' + researcher.ResearchExpertise + '</p>' +
         generateProjectsContent([researcher["Project1"], researcher["Project2"], researcher["Project3"], researcher["Project4"], researcher["Project5"]]) +
         generateRelevantCourses([researcher["Course1"], researcher["Course2"], researcher["Course3"], researcher["Course4"], researcher["Course5"]]) + '</div>';
         if(scrollloc == researcher.FirstName.trim() + researcher.LastName.trim())
@@ -314,11 +328,15 @@ let generateLogoContent = function (expert) {
 
 let getResearchInterests = function (expert) {
     let interests = "";
-    interests += (expert["Keyword1"] == '' ? "" : expert["Keyword1"] + "; ") + (expert["Keyword2"] == '' ? "" : expert["Keyword2"] + "; ") +
-        (expert["Keyword3"] == '' ? "" : expert["Keyword3"] + "; ") + (expert["Keyword4"] == '' ? "" : expert["Keyword4"] + "; ") +
-        (expert["Keyword5"] == '' ? "" : expert["Keyword5"] + "; ") + (expert["Keyword6"] == '' ? "" : expert["Keyword6"] + "; ") +
-        expert["Keyword7"];
-    return interests;
+    if(expert["Keyword1"] == '' && expert["Keyword2"] == '' && expert["Keyword3"] == '' && expert["Keyword4"] == '' && expert["Keyword5"] == '' && expert["Keyword6"] == '' && expert["Keyword7"] == ''){
+        return null;
+    }else{
+        interests += (expert["Keyword1"] == '' ? "" : expert["Keyword1"] + "; ") + (expert["Keyword2"] == '' ? "" : expert["Keyword2"] + "; ") +
+            (expert["Keyword3"] == '' ? "" : expert["Keyword3"] + "; ") + (expert["Keyword4"] == '' ? "" : expert["Keyword4"] + "; ") +
+            (expert["Keyword5"] == '' ? "" : expert["Keyword5"] + "; ") + (expert["Keyword6"] == '' ? "" : expert["Keyword6"] + "; ") +
+            expert["Keyword7"];
+        return interests;
+    }
 }
 
 let generateProjectsContent = function (projects) {
@@ -547,10 +565,15 @@ let getHttpLink = function (link) {
 
 let getResearchAreas = function (expert) {
     let areas = "";
-    expert.ResearchAreas.forEach(area => {
-        areas += area + "; ";
-    });
-    return areas;
+    if(expert.ResearchAreas.length==0){
+        return null;
+    }
+    else{
+        expert.ResearchAreas.forEach(area => {
+            areas += area + "; ";
+        });
+        return areas;
+    }
 }
 
 let getUniqueResearchAreas = function (data) {

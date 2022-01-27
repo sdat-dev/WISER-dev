@@ -738,7 +738,7 @@ Primary use:    Common.css file used for styling header and
         width: 70%;
     }
     #landing-page-text-wrapper>h1 {
-        font-size: 3.2vw;
+        font-size: 3rem;
         width: 1200px;
     }
     #landing-page-text-wrapper>p {
@@ -753,7 +753,7 @@ Primary use:    Common.css file used for styling header and
         width: 70%;
     }
     #landing-page-text-wrapper-home>h1 {
-        font-size: 3.2vw;
+        font-size: 3.5rem;
     }
     #landing-page-text-wrapper-home>p {
         font-size: 1.75vw;

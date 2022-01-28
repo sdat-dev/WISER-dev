@@ -31,13 +31,13 @@ let buildteam = function (members) {
         }
         content += '<p class = "speakers-info">';
         if (member.email == undefined) {
-            content += '<img class = "speakers-img" style="height: 8.5rem;width: 8.5rem;border-radius: 50%;margin-left: auto;margin-right: auto;display: block;margin-left: auto;margin-right: auto;" src= "../assets/images/Researchers/placeholder.jpg" />';
+            content += '<img class = "speakers-img" style="height: 200.887px; width: 200.887px; border-radius: 50%;" src= "../assets/images/Researchers/placeholder.jpg" />';
         }
         else {
-            content += '<img class = "speakers-img" style="height: 8.5rem;width: 8.5rem;border-radius: 50%;margin-left: auto;margin-right: auto;display: block;margin-left: auto;margin-right: auto;" src= "../assets/images/Researchers/' + member.email + '.jpg" />';
+            content += '<img class = "speakers-img" style="height: 200.887px; width: 200.887px; border-radius: 50%;" src= "../assets/images/Researchers/' + member.email + '.jpg" />';
         }
         content += '<br>' +
-            '<span class = "title" style="display: block; margin-left: auto; margin-right: auto; width: 50%; text-align: center;">' +
+            '<span class = "title">' +
             '<strong>' + member.name + '</strong>' +
             '<br>' +
             '<span style="font-size: 16px;">' +

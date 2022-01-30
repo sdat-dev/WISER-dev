@@ -7,12 +7,6 @@ Primary use:    footer.css file used for styling components
 [Layout]
 -------------------------------------------------------------------*/
 
-#footer{
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
 footer.footer a {
     background-image: linear-gradient(120deg, #F39422 0%, #F39422 100%);
     background-repeat: no-repeat;
@@ -179,6 +173,15 @@ footer.footer .footer-new a, footer.footer .footer-new p {
     .footer.footer .footer-new p {
         max-width: 100%;
     }
+
+}
+
+@media (min-width:4000px) {
+    #footer {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
 }
 
 @media (max-width:767px) {
@@ -191,6 +194,7 @@ footer.footer .footer-new a, footer.footer .footer-new p {
         padding: 0.65em 1em;
         text-align: center;
     }
+
     .nsf-logo {
         width: 80px;
         float: right;
@@ -222,6 +226,7 @@ footer.footer .footer-new a, footer.footer .footer-new p {
     footer.footer a {
         background-image: none;
     }
+
     .nsf-logo {
         width: 40px;
         float: right;

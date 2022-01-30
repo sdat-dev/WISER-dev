@@ -96,6 +96,15 @@ footer.footer .footer-new a, footer.footer .footer-new p {
     height: auto;
 }
 
+.nsf-logo {
+    max-width: 100%;
+    width: 100px;
+    float: right;
+    z-index: 10;
+    padding: 0.5rem;
+    position: relative;
+}
+
 .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
     position: relative;
     min-height: 1px;
@@ -126,6 +135,13 @@ footer.footer .footer-new a, footer.footer .footer-new p {
     .copyright {
         padding: 0.65em 1em;
         text-align: right;
+    }
+    .nsf-logo {
+        width: 80px;
+        float: right;
+        z-index: 10;
+        padding: 0.5rem;
+        position: relative;
     }
 }
 
@@ -177,6 +193,13 @@ footer.footer .footer-new a, footer.footer .footer-new p {
         padding: 0.65em 1em;
         text-align: center;
     }
+    .nsf-logo {
+        width: 80px;
+        float: right;
+        z-index: 10;
+        padding: 0.5rem;
+        position: relative;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -184,10 +207,11 @@ footer.footer .footer-new a, footer.footer .footer-new p {
         position: relative;
         background: radial-gradient(ellipse at center, rgba(0, 0, 0, .7) 0%, rgba(0, 0, 0, 0) 90%), url('../assets/images/footer/footer-test-1.jpg');
         padding: 1.5em 1.5em 1.5em 1.5em;
-        min-height: 0px !important; 
+        min-height: 0px !important;
         background-size: cover;
         background-repeat: no-repeat;
     }
+
     footer.footer .footer-icon {
         font-size: 0.85em !important;
         padding: 0px .7em !important;
@@ -196,7 +220,15 @@ footer.footer .footer-new a, footer.footer .footer-new p {
     footer.footer .footer-new a, footer.footer .footer-new p {
         padding: 0em 0em 0em 0em;
     }
+
     footer.footer a {
         background-image: none;
+    }
+    .nsf-logo {
+        width: 40px;
+        float: right;
+        z-index: 10;
+        padding: 0.5rem;
+        position: relative;
     }
 }

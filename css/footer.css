@@ -7,6 +7,11 @@ Primary use:    footer.css file used for styling components
 [Layout]
 -------------------------------------------------------------------*/
 
+#footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
 
 footer.footer a {
     background-image: linear-gradient(120deg, #F39422 0%, #F39422 100%);

@@ -39,6 +39,8 @@ Primary use:    Common.css file used for styling header and
 
 .body {
     width:fit-content;
+    background: url('../assets/images/bkg-gray-pattern-tile.png');
+
 }
 
 .main-container{

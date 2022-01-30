@@ -389,9 +389,7 @@ addfooter = function (relativepath = ".") {
         '<div class="region region-footer">' +
         '<section id="block-footer2020-2" data-block-plugin-id="block_content:58324575-ecf1-412b-b839-09d0cf593aef" class="block block-block-content">' +
 
-        '<div class="field field--name-body field--typ  e-text-with-summary field--label-hidden field--item">' +
-        '<img alt="NSF Logo" class="nsf-logo" src="assets/images/footer/nsf-footer.png"  />'+
-
+        '<div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">' +
         '<div class="footer-new">' +
         '<table>' +
         '<tbody>' +

@@ -136,13 +136,6 @@ footer.footer .footer-new a, footer.footer .footer-new p {
         padding: 0.65em 1em;
         text-align: right;
     }
-    .nsf-logo {
-        width: 80px;
-        float: right;
-        z-index: 10;
-        padding: 0.5rem;
-        position: relative;
-    }
 }
 
 @media (min-width:992px) {

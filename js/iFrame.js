@@ -1,5 +1,5 @@
 // set initial size
-$(document).ready(function() {
+$(window).on('load', function() {
   console.log("Inside begin 1");
   SetIframeSize();
 });

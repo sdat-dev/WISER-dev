@@ -1,3 +1,4 @@
+let filename = "Researchers";
 window.onload = function () {
     let requestURL = "data/researchers.json";
     let datarequestURL = "data/researchersdata.json";

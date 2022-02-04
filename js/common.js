@@ -233,7 +233,7 @@ function getDate(serial) {
     return (parseInt(date_info.getMonth(), 10) + 1) + '/' + (parseInt(date_info.getDate(), 10) + 1) + '/' + date_info.getFullYear();//, 0, minutes, seconds);
 }
 
-let getContent = function (webelements,filename) {
+let getContent = function (webelements) {
     let content = '';
     let logostart = true;
     let pageheaders = [];
@@ -257,9 +257,9 @@ let getContent = function (webelements,filename) {
         }
         else if (type == 'img') {
             if (element.hasOwnProperty('style'))
-                content += '<img src="https://sdat-dev.github.io/WISER-dev/assets/images/' + filename + '/' + element.content + '" alt="" style="' + element.style + '">';
+                content += '<img src="https://sdat-dev.github.io/resources/wiser/assets/images/' + element.content + '" alt="" style="' + element.style + '">';
             else
-                content += '<img src="https://sdat-dev.github.io/WISER-dev/assets/images/' + filename + '/' + element.content + '" alt="" style="width: 100%;">';
+                content += '<img src="https://sdat-dev.github.io/resources/wiser/assets/images/' + element.content + '" alt="" style="width: 100%;">';
         }
         else if (type == 'iframe') {
             content += '<iframe ' + element.content + '></iframe>';
@@ -287,7 +287,7 @@ let getContent = function (webelements,filename) {
             content += '<div class = "col-xl-4 col-lg-4 col-md-4" style="text-align: center;padding-bottom: 10px;">' +
                 '<a href = "' + element.source + '">' +
                 '<div class = "home-logo-container">' +
-                '<img class = "home-logo" style = "width: 200px;height: 200px;border: 5px solid #f2b368;" src = "assets/images/' + filename + '/' + element.logo + '">' +
+                '<img class = "home-logo" style = "width: 200px;height: 200px;border: 5px solid #f2b368;" src = "assets/images/top-menu/Project-Square/' + element.logo + '">' +
                 '<p>' + element.content + '</p>' +
                 '</div>' +
                 '</a>' +
@@ -298,7 +298,7 @@ let getContent = function (webelements,filename) {
         }
         else if (type == 'a' && element.hasOwnProperty("style") && element.logo != '') {
             content += '<a target = "_blank" href = "' + element.source + '">' +
-                '<img  img-fluid style="' + element.style + '" src = "https://sdat-dev.github.io/WISER-dev/assets/images/' + filename + '/' + element.logo + '">';
+                '<img  img-fluid style="' + element.style + '" src = "https://sdat-dev.github.io/resources/wiser/assets/images/' + element.logo + '">';
             if (element.content != '') {
                 content += '<p>' + element.content + '</p>';
             }
@@ -330,7 +330,7 @@ let addheader = function (headers) {
             image = typeof headers[i].logo != 'undefined' && headers[i].logo != '' ? headers[i].logo : image;
             header1 = typeof headers[i].content != 'undefined' && headers[i].content != '' ? headers[i].content : header1;
             header2 = typeof headers[i].subcontent != 'undefined' && headers[i].subcontent != '' ? headers[i].subcontent : header2;
-            let source = 'https://sdat-dev.github.io/WISER-dev/assets/images/'+ filename + '/' + (typeof headers[i].source != 'undefined' && headers[i].source != '' ? headers[i].source + '/' : '');
+            let source = 'https://sdat-dev.github.io/resources/wiser/assets/images/headers/' + (typeof headers[i].source != 'undefined' && headers[i].source != '' ? headers[i].source + '/' : '');
             if (i == 0) {
                 content += '<div class="carousel-item active w3-animate-opacity">';
             }
@@ -356,20 +356,12 @@ let addheader = function (headers) {
         }
         content += '</div></div>';
     }
-    else{
+    else {
         for (var i = 0; i < headers.length; i++) {
             image = typeof headers[i].logo != 'undefined' && headers[i].logo != '' ? headers[i].logo : image;
             header1 = typeof headers[i].content != 'undefined' && headers[i].content != '' ? headers[i].content : header1;
             header2 = typeof headers[i].subcontent != 'undefined' && headers[i].subcontent != '' ? headers[i].subcontent : header2;
-            let source = "";
-            if(filename.includes("project")){
-                source = 'https://sdat-dev.github.io/WISER-dev/assets/images/researchareas/' + (typeof headers[i].source != 'undefined' && headers[i].source != '' ? headers[i].source + '/' : '');
-            }
-            else{
-                source = 'https://sdat-dev.github.io/WISER-dev/assets/images/' + filename + '/' + (typeof headers[i].source != 'undefined' && headers[i].source != '' ? headers[i].source + '/' : '');
-            }
-            
-            
+            let source = 'https://sdat-dev.github.io/WISER-dev/assets/images/top-menu/' + (typeof headers[i].source != 'undefined' && headers[i].source != '' ? headers[i].source + '/' : '');
 
             content +=
                 '<div id="page-header">' +

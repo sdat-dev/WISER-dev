@@ -1,3 +1,4 @@
+let filename = "project6";
 let requestURL = "../data/project6.json";
 let request = new XMLHttpRequest();
 
@@ -13,11 +14,7 @@ request.onload = function () {
     let data = ((false || !!document.documentMode)) ? JSON.parse(datajson) : datajson;
     let contentElement = document.createElement('div');
     contentElement.classList.add('content');
-<<<<<<< HEAD
     contentElement.innerHTML = getContent(data.webelements, filename);
-=======
-    contentElement.innerHTML = getContent(data.webelements);
->>>>>>> 7124d10895e2861066a22b61049a4f752e9c582f
     maincontentContainer.appendChild(contentElement);
     contentElement = document.createElement('div');
     contentElement.classList.add('display-flex');

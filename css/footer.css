@@ -41,7 +41,7 @@ footer.footer {
 
 footer.footer .footer-new {
     position: relative;
-    background: radial-gradient(ellipse at center, rgba(0, 0, 0, .7) 0%, rgba(0, 0, 0, 0) 90%), url('../assets/images/footer/footer-test-1.jpg');
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, .7) 0%, rgba(0, 0, 0, 0) 90%), url('https://sdat-dev.github.io/resources/WISER-dev/assets/images/footer/footer-test-1.jpg');
     padding: 5em 3em 1.5em 3em;
     min-height: 400px;
     background-size: cover;
@@ -207,7 +207,7 @@ footer.footer .footer-new a, footer.footer .footer-new p {
 @media only screen and (max-width: 600px) {
     footer.footer .footer-new {
         position: relative;
-        background: radial-gradient(ellipse at center, rgba(0, 0, 0, .7) 0%, rgba(0, 0, 0, 0) 90%), url('../assets/images/footer/footer-test-1.jpg');
+        background: radial-gradient(ellipse at center, rgba(0, 0, 0, .7) 0%, rgba(0, 0, 0, 0) 90%), url('https://sdat-dev.github.io/resources/WISER-dev/assets/images/footer/footer-test-1.jpg');
         padding: 1.5em 1.5em 1.5em 1.5em;
         min-height: 0px !important;
         background-size: cover;

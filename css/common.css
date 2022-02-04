@@ -39,7 +39,7 @@ Primary use:    Common.css file used for styling header and
 
 .body {
     /* width:fit-content; */
-    background: url('../assets/images/bkg-gray-pattern-tile.png');
+    background: url('https://sdat-dev.github.io/resources/WISER-dev/assets/images/common/bkg-gray-pattern-tile.png');
 
 }
 
@@ -116,7 +116,7 @@ Primary use:    Common.css file used for styling header and
 }
 
 .content-wrapper {
-    background: url('../assets/images/bkg-gray-pattern-tile.png');
+    background: url('https://sdat-dev.github.io/resources/WISER-dev/assets/images/common/bkg-gray-pattern-tile.png');
 }
 
 .email-link {

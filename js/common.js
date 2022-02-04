@@ -1,6 +1,7 @@
 let menuItems = [{"item":"Home","link":"home.html"},{"item":"Impact","link":"impact.html"},{"item":"Uniqueness","link":"uniqueness.html"},{"item":"Research Areas","link":"researchareas.html","subItems":[{"item":"Climate Change","link":"climatechange.html"},{"item":"Grid Resilience","link":"gridresilience.html"},{"item":"Renewable Energy","link":"renewableenergy.html"},{"item":"Outage Management","link":"outagemanagement.html"}]},{"item":"Researchers","link":"researchers.html"},{"item":"Planning Workshop","link":"planningworkshop.html"}]
 //Menu Start
 //What evet written  before '//SideMenu Start' will be relace with sidemenuItems in automation scripts
+
 let addTopNav = function (page, markactive = true, extraindirection = false) {
     let topnav = document.getElementById('navbar');
     topnav.classList.add("navbar-expand-lg");
@@ -191,7 +192,7 @@ let generateOpenAccordionElem = function (level, collapseId, headerId, parentId,
     return accordionElem;
 }
 
-let createTabNavigation = function (distincttabs, tabname, activeindex=0) {
+let createTabNavigation = function (distincttabs, tabname, activeindex = 0) {
     let navigationContent = '<ul class="nav nav-pills" id="pills-tab" role="tablist">';
     for (let i = 0; i < distincttabs.length; i++) {
         let linkElement = '';
@@ -232,8 +233,7 @@ function getDate(serial) {
     let date_info = new Date(utc_value * 1000);
     return (parseInt(date_info.getMonth(), 10) + 1) + '/' + (parseInt(date_info.getDate(), 10) + 1) + '/' + date_info.getFullYear();//, 0, minutes, seconds);
 }
-
-let getContent = function (webelements) {
+let getContent = function (webelements, filename) {
     let content = '';
     let logostart = true;
     let pageheaders = [];
@@ -257,9 +257,9 @@ let getContent = function (webelements) {
         }
         else if (type == 'img') {
             if (element.hasOwnProperty('style'))
-                content += '<img src="https://sdat-dev.github.io/resources/wiser/assets/images/' + element.content + '" alt="" style="' + element.style + '">';
+                content += '<img src="https://sdat-dev.github.io/resources/WISER-dev/assets/images/' + filename + '/' + element.content + '" alt="" style="' + element.style + '">';
             else
-                content += '<img src="https://sdat-dev.github.io/resources/wiser/assets/images/' + element.content + '" alt="" style="width: 100%;">';
+                content += '<img src="https://sdat-dev.github.io/resources/WISER-dev/assets/images/' + filename + '/' + element.content + '" alt="" style="width: 100%;">';
         }
         else if (type == 'iframe') {
             content += '<iframe ' + element.content + '></iframe>';
@@ -287,7 +287,7 @@ let getContent = function (webelements) {
             content += '<div class = "col-xl-4 col-lg-4 col-md-4" style="text-align: center;padding-bottom: 10px;">' +
                 '<a href = "' + element.source + '">' +
                 '<div class = "home-logo-container">' +
-                '<img class = "home-logo" style = "width: 200px;height: 200px;border: 5px solid #f2b368;" src = "assets/images/top-menu/Project-Square/' + element.logo + '">' +
+                '<img class = "home-logo" style = "width: 200px;height: 200px;border: 5px solid #f2b368;" src = "https://sdat-dev.github.io/resources/WISER-dev/assets/images/' + filename + '/' + element.logo + '">' +
                 '<p>' + element.content + '</p>' +
                 '</div>' +
                 '</a>' +
@@ -298,7 +298,7 @@ let getContent = function (webelements) {
         }
         else if (type == 'a' && element.hasOwnProperty("style") && element.logo != '') {
             content += '<a target = "_blank" href = "' + element.source + '">' +
-                '<img  img-fluid style="' + element.style + '" src = "https://sdat-dev.github.io/resources/wiser/assets/images/' + element.logo + '">';
+                '<img  img-fluid style="' + element.style + '" src = "https://sdat-dev.github.io/resources/WISER-dev/assets/images/' + filename + '/' + element.logo + '">';
             if (element.content != '') {
                 content += '<p>' + element.content + '</p>';
             }
@@ -322,7 +322,6 @@ let addheader = function (headers) {
     let header1 = "";
     let header2 = "";
     let item = [];
-
     if ((window.location.href).includes('home.html')) {
         content += '<div class="carousel w3-animate-opacity" data-ride="carousel">' +
             '<div class="carousel-inner">';
@@ -330,7 +329,7 @@ let addheader = function (headers) {
             image = typeof headers[i].logo != 'undefined' && headers[i].logo != '' ? headers[i].logo : image;
             header1 = typeof headers[i].content != 'undefined' && headers[i].content != '' ? headers[i].content : header1;
             header2 = typeof headers[i].subcontent != 'undefined' && headers[i].subcontent != '' ? headers[i].subcontent : header2;
-            let source = 'https://sdat-dev.github.io/resources/wiser/assets/images/headers/' + (typeof headers[i].source != 'undefined' && headers[i].source != '' ? headers[i].source + '/' : '');
+            let source = 'https://sdat-dev.github.io/resources/WISER-dev/assets/images/' + filename + '/' + (typeof headers[i].source != 'undefined' && headers[i].source != '' ? headers[i].source + ' / ' : '');
             if (i == 0) {
                 content += '<div class="carousel-item active w3-animate-opacity">';
             }
@@ -361,7 +360,15 @@ let addheader = function (headers) {
             image = typeof headers[i].logo != 'undefined' && headers[i].logo != '' ? headers[i].logo : image;
             header1 = typeof headers[i].content != 'undefined' && headers[i].content != '' ? headers[i].content : header1;
             header2 = typeof headers[i].subcontent != 'undefined' && headers[i].subcontent != '' ? headers[i].subcontent : header2;
-            let source = 'https://sdat-dev.github.io/WISER-dev/assets/images/top-menu/' + (typeof headers[i].source != 'undefined' && headers[i].source != '' ? headers[i].source + '/' : '');
+            let source = "";
+            if (filename.includes("project")) {
+                source = 'https://sdat-dev.github.io/resources/WISER-dev/assets/images/researchareas/' + (typeof headers[i].source != 'undefined' && headers[i].source != '' ? headers[i].source + '/' : '');
+            }
+            else {
+                source = 'https://sdat-dev.github.io/resources/WISER-dev/assets/images/' + filename + '/' + (typeof headers[i].source != 'undefined' && headers[i].source != '' ? headers[i].source + '/' : '');
+            }
+
+
 
             content +=
                 '<div id="page-header">' +
@@ -390,7 +397,7 @@ addfooter = function (relativepath = ".") {
         '<section id="block-footer2020-2" data-block-plugin-id="block_content:58324575-ecf1-412b-b839-09d0cf593aef" class="block block-block-content">' +
 
         '<div class="field field--name-body field--typ  e-text-with-summary field--label-hidden field--item">' +
-        '<img alt="NSF Logo" class="nsf-logo" src="assets/images/footer/nsf-footer.png"  />'+
+        '<img alt="NSF Logo" class="nsf-logo" src="https://sdat-dev.github.io/resources/WISER-dev/assets/images/' + 'footer/nsf-footer.png"  />' +
 
         '<div class="footer-new">' +
         '<table>' +
@@ -399,7 +406,7 @@ addfooter = function (relativepath = ".") {
         '<td>' +
         '<div class="col-12 col-sm-offset-0 col-md-8 col-md-offset-3 col-lg-8 col-lg-offset-4">' +
         '<a target=" _blank" href="https://www.albany.edu/">' +
-        '<img alt="University at Albany Logo" class=" img-responsive footer-logo" height="39" src="https://sdat-dev.github.io/WISER-dev/assets/images/footer/ualbany-footer-logo.png" typeof="Image" />' +
+        '<img alt="University at Albany Logo" class=" img-responsive footer-logo" height="39" src="https://sdat-dev.github.io/resources/WISER-dev/assets/images/' + 'footer/ualbany-footer-logo.png" typeof="Image" />' +
         '</a>' +
         '<p>' +
         '<a target="_blank" href="https://www.facebook.com/universityatalbany"><span class="fab fa-facebook-f footer-icon" role="img" aria-label="Facebook Icon"></span><span class="sr-only">facebook</span></a>' +
@@ -415,7 +422,7 @@ addfooter = function (relativepath = ".") {
         '<div class="col-12 col-sm-offset-0 col-md-8 col-md-offset-3 col-lg-8 col-lg-offset-4" style="padding-left: 100px;margin-left: 0px;">' +
         '<a target="_blank" href="https://www.uconn.edu/">' +
         '<img alt="University of Connecticut Logo" style="' +
-        'width: 2000px;" class=" img-responsive footer-logo" height="39" src="https://sdat-dev.github.io/WISER-dev/assets/images/footer/uconn-footer-logo.png" typeof="Image" />' +
+        'width: 2000px;" class=" img-responsive footer-logo" height="39" src="https://sdat-dev.github.io/resources/WISER-dev/assets/images/' + 'footer/uconn-footer-logo.png" typeof="Image" />' +
         '</a>' +
         '<p>' +
         '<a target="_blank" href="https://www.facebook.com/UConn/"><span class="fab fa-facebook-f footer-icon" role="img" aria-label="Facebook Icon"></span><span class="sr-only">facebook</span></a>' +

@@ -1,4 +1,4 @@
-let filename = "Researchers";
+let filename = "researchers";
 window.onload = function () {
     let requestURL = "data/researchers.json";
     let datarequestURL = "data/researchersdata.json";
@@ -27,7 +27,7 @@ window.onload = function () {
                 '<a id="' + i + '-tab" onclick= "searchfunction2(\'' + getAreas[i] + '\', ' + i + ')" class="nav-link" aria-current="page" >' + getAreas[i] + '</a></li>';
         }
         content += '</ul></div>';
-        content +='<div id="experts-content">'+buildResearchersContent(researchers, scrollloc)+'</div>';
+        content += '<div id="experts-content">' + buildResearchersContent(researchers, scrollloc) + '</div>';
         let contentElement = document.createElement('div');
         contentElement.classList.add('content');
         contentElement.innerHTML = content.trim();
@@ -43,14 +43,14 @@ window.onload = function () {
         //document.getElementById(divID[1].toString()).scrollIntoView(true); Need to figure it out
         clearsearch2(true);
         let scrollelm = document.getElementById(scrollloc);
-        if(scrollloc != null)
-            scrollelm.scrollIntoView({block: "center"});
+        if (scrollloc != null)
+            scrollelm.scrollIntoView({ block: "center" });
     })).catch(errors => {
         console.log(errors);
     })
 }
 
-let buildResearchersContent = function(experts, scrollloc) {
+let buildResearchersContent = function (experts, scrollloc) {
     let content = '';
     let universityResearchers = experts.filter(function (expert) {
         return (expert["UniversityInstitution"] == "UAlbany") || (expert["UniversityInstitution"] == "UConn");
@@ -76,14 +76,14 @@ let buildResearchersContent = function(experts, scrollloc) {
             tabId = tabattribute + i.toString();
             let value = buildUniversityResearchers(tabId, tabexperts, scrollloc);
             tabContent.push(value["content"]);
-            if(value["isActive"])
+            if (value["isActive"])
                 activeIndex = i;
         }
         else {
             tabId = tabattribute + i.toString();
             let value = buildOtherResearchers(tabId, otherResearchers, scrollloc);
             tabContent.push(value["content"]);
-            if(value["isActive"])
+            if (value["isActive"])
                 activeIndex = i;
         }
 
@@ -97,7 +97,7 @@ let buildResearchersContent = function(experts, scrollloc) {
 //Start with level1 accordion and build one by one the levels going down.
 //this is nestted accordion that can go upto 4 levels
 let counter = 1;
-let buildUniversityResearchers = function(tabId, tabexperts, scrollloc){
+let buildUniversityResearchers = function (tabId, tabexperts, scrollloc) {
     let value = {};
     value["isActive"] = false;
     let contactElem = '';
@@ -135,29 +135,29 @@ let buildUniversityResearchers = function(tabId, tabexperts, scrollloc){
                 level3s.sort((a, b) => b.firstName - a.firstName)
                 //for level2s build simple list
                 let value = buildUniversityResearcherElements(level3s, scrollloc);
-                level2Elem+= value["content"];
-                if( value["expanded"])
+                level2Elem += value["content"];
+                if (value["expanded"])
                     expanded = value["expanded"];
             });
         }
         if (level1 == "") {
             level1 = "Other";
         }
-        if(expanded){
+        if (expanded) {
             value["isActive"] = true;
-            contactElem+= generateOpenAccordionElem(1, collapseId1, headerId1, tabId, childId1, level1, level2Elem);
-        } 
+            contactElem += generateOpenAccordionElem(1, collapseId1, headerId1, tabId, childId1, level1, level2Elem);
+        }
         else
-            contactElem+= generateAccordionElem(1, collapseId1, headerId1, tabId, childId1, level1, level2Elem);
+            contactElem += generateAccordionElem(1, collapseId1, headerId1, tabId, childId1, level1, level2Elem);
     });
     contactElem += '</div>' +
         '</div>';
-        value["content"] = contactElem;
+    value["content"] = contactElem;
     //end level1 accordion
     return value;
 }
 
-let buildUniversityResearcherElements = function(researchers, scrollloc){
+let buildUniversityResearcherElements = function (researchers, scrollloc) {
     let value = {};
     value["expanded"] = false;
     let content = '';
@@ -165,37 +165,37 @@ let buildUniversityResearcherElements = function(researchers, scrollloc){
         if (researchers[i].FirstName == "") //skip of there is no first name
             continue;
         let researcher = researchers[i];
-        content += '<div id= ' + researcher.FirstName.replace(" ", "") + researcher.LastName.replace(" ","") + ' class = "search-container expert-info">' ;
+        content += '<div id= ' + researcher.FirstName.replace(" ", "") + researcher.LastName.replace(" ", "") + ' class = "search-container expert-info">';
         if (researcher.Photo == undefined) {
-            content += '<img class = "expert-image" src = "assets/images/Researchers/placeholder.jpg"/>' ;
+            content += '<img class = "expert-image" src = "https://sdat-dev.github.io/resources/WISER-dev/assets/images/researchers/placeholder.jpg"/>';
 
         }
-        else{
-            content += '<img class = "expert-image" src = "assets/images/Researchers/' + researcher.Email + '.jpg"/>' ;
+        else {
+            content += '<img class = "expert-image" src = "https://sdat-dev.github.io/resources/WISER-dev/assets/images/researchers/' + researcher.Email + '.jpg"/>';
         }
 
         content += '<h2 class = "content-header-no-margin">' + (researcher["UniversityInstitutionalPage"] == "" ? researcher.FirstName + ' ' + researcher.LastName : '<a class = "no-link-decoration" href = ' + getHttpLink(researcher["UniversityInstitutionalPage"]) + '>' + researcher.FirstName + ' ' + researcher.LastName + '</a>') + '</h2>' +
-        '<h5 class = "content-header-no-margin faculty-title" style = "font-size:20px;">' + (researcher.JobTitle != '' ? researcher.JobTitle + '<br>' : '') + (researcher.Department != '' ? researcher.Department : '') + '</h5>' +
-        generateLogoContent(researcher) + '<p class = "faculty-description"><strong>Email: </strong> <a class = "email-link" href = mailto:' + researcher.Email +
-        '>' + researcher.Email + '</a><br>' + (researcher.PhoneNumber != "" ? '<strong>Phone: </strong>' + formatPhone(researcher.PhoneNumber) + '<br>' : "") + '</p>';
-        if(getResearchAreas(researcher)!=null){
+            '<h5 class = "content-header-no-margin faculty-title" style = "font-size:20px;">' + (researcher.JobTitle != '' ? researcher.JobTitle + '<br>' : '') + (researcher.Department != '' ? researcher.Department : '') + '</h5>' +
+            generateLogoContent(researcher) + '<p class = "faculty-description"><strong>Email: </strong> <a class = "email-link" href = mailto:' + researcher.Email +
+            '>' + researcher.Email + '</a><br>' + (researcher.PhoneNumber != "" ? '<strong>Phone: </strong>' + formatPhone(researcher.PhoneNumber) + '<br>' : "") + '</p>';
+        if (getResearchAreas(researcher) != null) {
             content += '<p class="research-areas" id = "research-areas">';
             content += '<strong>Research Areas: </strong>' + getResearchAreas(researcher) + '</p>';
         }
-        if(getResearchInterests(researcher)!=null){
-            content += '<p>'+'<strong>Research Interests: </strong>' + getResearchInterests(researcher)+'</p>';
+        if (getResearchInterests(researcher) != null) {
+            content += '<p>' + '<strong>Research Interests: </strong>' + getResearchInterests(researcher) + '</p>';
         }
         content += '<p>' + researcher.ResearchExpertise + '</p>' +
-        generateProjectsContent([researcher["Project1"], researcher["Project2"], researcher["Project3"], researcher["Project4"], researcher["Project5"]]) +
-        generateRelevantCourses([researcher["Course1"], researcher["Course2"], researcher["Course3"], researcher["Course4"], researcher["Course5"]]) + '</div>';
-        if(scrollloc == researcher.FirstName.trim() + researcher.LastName.trim())
+            generateProjectsContent([researcher["Project1"], researcher["Project2"], researcher["Project3"], researcher["Project4"], researcher["Project5"]]) +
+            generateRelevantCourses([researcher["Course1"], researcher["Course2"], researcher["Course3"], researcher["Course4"], researcher["Course5"]]) + '</div>';
+        if (scrollloc == researcher.FirstName.trim() + researcher.LastName.trim())
             value["expanded"] = true;
     }
     value["content"] = content;
     return value;
 }
 
-let buildOtherResearchers = function(tabId, tabresearchers, scrollloc){
+let buildOtherResearchers = function (tabId, tabresearchers, scrollloc) {
     let value = {};
     value["isActive"] = false;
     let contactElem = '';
@@ -230,9 +230,9 @@ let buildOtherResearchers = function(tabId, tabresearchers, scrollloc){
                 });
                 level3s.sort((a, b) => b.firstName - a.firstName)
                 //for level2s build simple list
-                value =  buildOtherResearcherElements(level3s, scrollloc);
-                level2Elem+=value["content"];
-                if( value["expanded"])
+                value = buildOtherResearcherElements(level3s, scrollloc);
+                level2Elem += value["content"];
+                if (value["expanded"])
                     expanded = value["expanded"];
             });
         }
@@ -240,12 +240,12 @@ let buildOtherResearchers = function(tabId, tabresearchers, scrollloc){
         if (level1 == "") {
             level1 = "Other";
         }
-        if(expanded){
+        if (expanded) {
             value["isActive"] = true;
-            contactElem+= generateOpenAccordionElem(1, collapseId1, headerId1, tabId, childId1, level1, level2Elem);
+            contactElem += generateOpenAccordionElem(1, collapseId1, headerId1, tabId, childId1, level1, level2Elem);
         }
         else
-            contactElem+= generateAccordionElem(1, collapseId1, headerId1, tabId, childId1, level1, level2Elem);
+            contactElem += generateAccordionElem(1, collapseId1, headerId1, tabId, childId1, level1, level2Elem);
     });
     contactElem += '</div>';
     //end level1 accordion
@@ -275,7 +275,7 @@ let getDistinctUniversities = function (researchers) {
     return distinctDivisions;
 }
 
-let buildOtherResearcherElements = function(researchers, scrollloc){
+let buildOtherResearcherElements = function (researchers, scrollloc) {
     let value = {};
     value["expanded"] = false;
     let content = '';
@@ -283,45 +283,45 @@ let buildOtherResearcherElements = function(researchers, scrollloc){
         if (researchers[i].FirstName == "") //skip if there is no first name
             continue;
         let researcher = researchers[i];
-        content += '<div id= ' + researcher.FirstName.replace(" ","") + researcher.LastName.replace(" ","") + ' class = "search-container expert-info">' ;
+        content += '<div id= ' + researcher.FirstName.replace(" ", "") + researcher.LastName.replace(" ", "") + ' class = "search-container expert-info">';
         if (researcher.Photo == undefined) {
-            content += '<img class = "expert-image" src = "assets/images/Researchers/placeholder.jpg"/>' ;
+            content += '<img class = "expert-image" src = "assets/images/Researchers/placeholder.jpg"/>';
         }
-        else{
-            content += '<img class = "expert-image" src = "assets/images/Researchers/' + researcher.Email + '.jpg"/>' ;
+        else {
+            content += '<img class = "expert-image" src = "assets/images/Researchers/' + researcher.Email + '.jpg"/>';
         }
         content += '<h2 class = "content-header-no-margin">' + (researcher["UniversityInstitutionalPage"] == "" ? researcher.FirstName + ' ' + researcher.LastName : '<a class = "no-link-decoration" href = ' +
-        getHttpLink(researcher["UniversityInstitutionalPage"]) + '>' + researcher.FirstName + ' ' + researcher.LastName + '</a>') + '</h2>' +
-        '<h5 class = "content-header-no-margin faculty-title" style = "font-size:20px;">' + (researcher.JobTitle != '' ? researcher.JobTitle + '<br>' : '') +
-        (researcher.OtherCollegeSchoolDivision != '' ? researcher.OtherCollegeSchoolDivision + ',<br>' : '') + (researcher.Department != '' ? researcher.Department : '') + '</h5>' +
-        generateLogoContent(researcher) + '<p class = "faculty-description"><strong>Email: </strong> <a class = "email-link" href = mailto:' + researcher.Email +
-        '>' + researcher.Email + '</a><br>' + (researcher.PhoneNumber != "" ? '<strong>Phone: </strong>' + formatPhone(researcher.PhoneNumber) + '<br>' : "") + '</p>';
-        if(getResearchAreas(researcher)!=null){
+            getHttpLink(researcher["UniversityInstitutionalPage"]) + '>' + researcher.FirstName + ' ' + researcher.LastName + '</a>') + '</h2>' +
+            '<h5 class = "content-header-no-margin faculty-title" style = "font-size:20px;">' + (researcher.JobTitle != '' ? researcher.JobTitle + '<br>' : '') +
+            (researcher.OtherCollegeSchoolDivision != '' ? researcher.OtherCollegeSchoolDivision + ',<br>' : '') + (researcher.Department != '' ? researcher.Department : '') + '</h5>' +
+            generateLogoContent(researcher) + '<p class = "faculty-description"><strong>Email: </strong> <a class = "email-link" href = mailto:' + researcher.Email +
+            '>' + researcher.Email + '</a><br>' + (researcher.PhoneNumber != "" ? '<strong>Phone: </strong>' + formatPhone(researcher.PhoneNumber) + '<br>' : "") + '</p>';
+        if (getResearchAreas(researcher) != null) {
             content += '<p class="research-areas" id = "research-areas">';
             content += '<strong>Research Areas: </strong>' + getResearchAreas(researcher) + '</p>';
         }
-        if(getResearchInterests(researcher)!=null){
-            content += '<p>'+'<strong>Research Interests: </strong>' + getResearchInterests(researcher)+'</p>';
+        if (getResearchInterests(researcher) != null) {
+            content += '<p>' + '<strong>Research Interests: </strong>' + getResearchInterests(researcher) + '</p>';
         }
         content += '<p>' + researcher.ResearchExpertise + '</p>' +
-        generateProjectsContent([researcher["Project1"], researcher["Project2"], researcher["Project3"], researcher["Project4"], researcher["Project5"]]) +
-        generateRelevantCourses([researcher["Course1"], researcher["Course2"], researcher["Course3"], researcher["Course4"], researcher["Course5"]]) + '</div>';
-        if(scrollloc == researcher.FirstName.trim() + researcher.LastName.trim())
+            generateProjectsContent([researcher["Project1"], researcher["Project2"], researcher["Project3"], researcher["Project4"], researcher["Project5"]]) +
+            generateRelevantCourses([researcher["Course1"], researcher["Course2"], researcher["Course3"], researcher["Course4"], researcher["Course5"]]) + '</div>';
+        if (scrollloc == researcher.FirstName.trim() + researcher.LastName.trim())
             value["expanded"] = true;
-}
+    }
     value["content"] = content;
     return value;
 }
 
 let generateLogoContent = function (expert) {
     let onlineCVContent = (expert["CV"] == '') ? '' :
-        '<a href = "' + expert["CV"] + '"><img src = "https://sdat-dev.github.io/resources/wiser/assets/images/cv.png"></a>';
+        '<a href = "' + expert["CV"] + '"><img src = "https://sdat-dev.github.io/resources/WISER-dev/assets/images/researchers/cv.png"></a>';
     let researchGateContent = (expert["ResearchGate"] == '') ? '' :
-        '<a href = "' + expert["ResearchGate"] + '"><img src = "https://sdat-dev.github.io/resources/wiser/assets/images/research-gate-logo.png"></a>';
+        '<a href = "' + expert["ResearchGate"] + '"><img src = "https://sdat-dev.github.io/resources/WISER-dev/assets/images/researchers/research-gate-logo.png"></a>';
     let googleScholarContent = (expert["GoogleScholar"] == '') ? '' :
-        '<a href = "' + expert["GoogleScholar"] + '"><img src = "https://sdat-dev.github.io/resources/wiser/assets/images/google-scholar-logo.png"></a>';
+        '<a href = "' + expert["GoogleScholar"] + '"><img src = "https://sdat-dev.github.io/resources/WISER-dev/assets/images/researchers/google-scholar-logo.png"></a>';
     let otherContent = (expert["Others"] == '') ? '' :
-        '<a href = "' + expert["Others"] + '"><img src = "https://sdat-dev.github.io/resources/wiser/assets/images/link.png"></a>';
+        '<a href = "' + expert["Others"] + '"><img src = "https://sdat-dev.github.io/resources/WISER-dev/assets/images/researchers/link.png"></a>';
     let linkContainer = '<div class = "display-flex icon-container">' +
         onlineCVContent + researchGateContent + googleScholarContent + otherContent + '</div>';
     return linkContainer;
@@ -329,9 +329,9 @@ let generateLogoContent = function (expert) {
 
 let getResearchInterests = function (expert) {
     let interests = "";
-    if(expert["Keyword1"] == '' && expert["Keyword2"] == '' && expert["Keyword3"] == '' && expert["Keyword4"] == '' && expert["Keyword5"] == '' && expert["Keyword6"] == '' && expert["Keyword7"] == ''){
+    if (expert["Keyword1"] == '' && expert["Keyword2"] == '' && expert["Keyword3"] == '' && expert["Keyword4"] == '' && expert["Keyword5"] == '' && expert["Keyword6"] == '' && expert["Keyword7"] == '') {
         return null;
-    }else{
+    } else {
         interests += (expert["Keyword1"] == '' ? "" : expert["Keyword1"] + "; ") + (expert["Keyword2"] == '' ? "" : expert["Keyword2"] + "; ") +
             (expert["Keyword3"] == '' ? "" : expert["Keyword3"] + "; ") + (expert["Keyword4"] == '' ? "" : expert["Keyword4"] + "; ") +
             (expert["Keyword5"] == '' ? "" : expert["Keyword5"] + "; ") + (expert["Keyword6"] == '' ? "" : expert["Keyword6"] + "; ") +
@@ -502,7 +502,7 @@ let clearsearch = function () {
 
 let clearsearch2 = function (flag) {
     document.getElementById("all-tab").classList.remove('active');
-    
+
     let tabs = document.getElementsByClassName('tab-pane');
     let panels = document.getElementsByClassName('panel');
     let searchElems = document.getElementsByClassName('research-areas');
@@ -566,10 +566,10 @@ let getHttpLink = function (link) {
 
 let getResearchAreas = function (expert) {
     let areas = "";
-    if(expert.ResearchAreas.length==0){
+    if (expert.ResearchAreas.length == 0) {
         return null;
     }
-    else{
+    else {
         expert.ResearchAreas.forEach(area => {
             areas += area + "; ";
         });

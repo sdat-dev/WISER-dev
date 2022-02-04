@@ -1,3 +1,4 @@
+let filename = "team-old";
 let requestURL = "../data/team-old.json";
 let request = new XMLHttpRequest();
 //getting content Element to append grants information
@@ -12,7 +13,7 @@ request.onload = function () {
     let data = ((false || !!document.documentMode)) ? JSON.parse(datajson) : datajson;
     let contentElement = document.createElement('div');
     contentElement.classList.add('content');
-    contentElement.innerHTML = getContent(data.webelements);
+    contentElement.innerHTML = getContent(data.webelements,filename);
     maincontentContainer.appendChild(contentElement);
     contentElement = document.createElement('div');
     contentElement.classList.add('display-flex');

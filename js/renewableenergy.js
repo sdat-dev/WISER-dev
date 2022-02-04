@@ -1,4 +1,3 @@
-let filename = "renewableenergy";
 let requestURL = "data/renewableenergy.json";
 let request = new XMLHttpRequest();
 //getting content Element to append grants information
@@ -13,7 +12,7 @@ request.onload = function () {
     let webelements = ((false || !!document.documentMode)) ? JSON.parse(webelementsjson) : webelementsjson;
     let contentElement = document.createElement('div');
     contentElement.classList.add('content');
-    contentElement.innerHTML = getContent(webelements,filename);
+    contentElement.innerHTML = getContent(webelements);
     maincontentContainer.appendChild(contentElement);
     addfooter();
 }

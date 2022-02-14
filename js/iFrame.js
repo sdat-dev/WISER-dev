@@ -1,6 +1,11 @@
 // set initial size
 $(window).on('load', function() {
   SetIframeSize();
+  var url = window.location.href;
+  const hashtag = url.split("#");
+  if(hashtag[1] == "register"){
+    document.getElementById('external').src = 'https://newyorkmep.org/wiser-registration/';
+  }
 });
 
 // resize on window resize

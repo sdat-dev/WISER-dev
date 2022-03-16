@@ -27,28 +27,58 @@ let buildteam = function (members) {
     content = "";
     for (let i = 0; i < members.length; i++) {
         let member = members[i];
-        content += '<div class = "col-lg-3 col-md-4 col-sm-6" style="height: 300px; padding-top: 20px;">';
-        if (member.link != undefined) {
-            content += '<a href = "../' + member.link + '">';
+        if(member.PI == "Yes"){
+            content += '<div class = "col-lg-3 col-md-4 col-sm-6" style="height: 300px; padding-top: 20px;">';
+            if (member.link != undefined) {
+                content += '<a href = "../' + member.link + '">';
+            }
+            content += '<p class = "speakers-info">';
+            if (member.email == undefined) {
+                content += '<img class = "speakers-img" style="height: 8.5rem;width: 8.5rem;border-radius: 50%;margin-left: auto;margin-right: auto;display: block;margin-left: auto;margin-right: auto;" src= "https://sdat-dev.github.io/resources/WISER-dev/assets/images/researchers/placeholder.jpg" />';
+            }
+            else {
+                content += '<img class = "speakers-img" style="height: 8.5rem;width: 8.5rem;border-radius: 50%;margin-left: auto;margin-right: auto;display: block;margin-left: auto;margin-right: auto;" src= "https://sdat-dev.github.io/resources/WISER-dev/assets/images/researchers/' + member.email + '.jpg" />';
+            }
+            content += '<br>' +
+                        '<span class = "title" style="display: block; margin-left: auto; margin-right: auto; width: 50%; text-align: center;">' +
+                        '<strong>' + member.name + ' (PI)</strong>' +
+                        '<br>' +
+                        '<span style="font-size: 16px;">' +
+                        member.university +
+                        '</span>' +
+                        '</span>' +
+                        '</p>' +
+                        '</a>' +
+                        '</div>';
+            break;
         }
-        content += '<p class = "speakers-info">';
-        if (member.email == undefined) {
-            content += '<img class = "speakers-img" style="height: 8.5rem;width: 8.5rem;border-radius: 50%;margin-left: auto;margin-right: auto;display: block;margin-left: auto;margin-right: auto;" src= "https://sdat-dev.github.io/resources/WISER-dev/assets/images/researchers/placeholder.jpg" />';
+    }
+    for (let i = 0; i < members.length; i++) {
+        let member = members[i];
+        if(member.PI != "Yes"){
+            content += '<div class = "col-lg-3 col-md-4 col-sm-6" style="height: 300px; padding-top: 20px;">';
+            if (member.link != undefined) {
+                content += '<a href = "../' + member.link + '">';
+            }
+            content += '<p class = "speakers-info">';
+            if (member.email == undefined) {
+                content += '<img class = "speakers-img" style="height: 8.5rem;width: 8.5rem;border-radius: 50%;margin-left: auto;margin-right: auto;display: block;margin-left: auto;margin-right: auto;" src= "https://sdat-dev.github.io/resources/WISER-dev/assets/images/researchers/placeholder.jpg" />';
+            }
+            else {
+                content += '<img class = "speakers-img" style="height: 8.5rem;width: 8.5rem;border-radius: 50%;margin-left: auto;margin-right: auto;display: block;margin-left: auto;margin-right: auto;" src= "https://sdat-dev.github.io/resources/WISER-dev/assets/images/researchers/' + member.email + '.jpg" />';
+            }
+            content += '<br>' +
+                        '<span class = "title" style="display: block; margin-left: auto; margin-right: auto; width: 50%; text-align: center;">' +
+                        '<strong>' + member.name + '</strong>' +
+                        '<br>' +
+                        '<span style="font-size: 16px;">' +
+                        member.university +
+                        '</span>' +
+                        '</span>' +
+                        '</p>' +
+                        '</a>' +
+                        '</div>';
         }
-        else {
-            content += '<img class = "speakers-img" style="height: 8.5rem;width: 8.5rem;border-radius: 50%;margin-left: auto;margin-right: auto;display: block;margin-left: auto;margin-right: auto;" src= "https://sdat-dev.github.io/resources/WISER-dev/assets/images/researchers/' + member.email + '.jpg" />';
-        }
-        content += '<br>' +
-            '<span class = "title" style="display: block; margin-left: auto; margin-right: auto; width: 50%; text-align: center;">' +
-            '<strong>' + member.name + '</strong>' +
-            '<br>' +
-            '<span style="font-size: 16px;">' +
-            member.university +
-            '</span>' +
-            '</span>' +
-            '</p>' +
-            '</a>' +
-            '</div>';
     }
     return content;
 }

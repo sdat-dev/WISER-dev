@@ -24,19 +24,12 @@
 <body class="body">
     <div id="logo" class="header-logo">
         <a aria-label="University at Albany Home" href="https://www.albany.edu">
-<<<<<<< HEAD
             <img id="albany-logo-minerva" alt="UAlbany"
                 src="https://sdat-dev.github.io/resources/WISER-dev/assets/images/header/UAlbany-logo-header.png">
         </a>
         <a aria-label="University of Connecticut Home" href="https://uconn.edu/">
             <img id="uconn-logo-minerva" alt="Uconn"
                 src="https://sdat-dev.github.io/resources/WISER-dev/assets/images/header/uconn-logo-alt.png">
-=======
-            <img id="albany-logo-minerva" alt="UAlbany" src="https://sdat-dev.github.io/resources/WISER-dev/assets/images/header/UAlbany-logo-header.png">
-        </a>
-        <a aria-label="University of Connecticut Home" href="https://uconn.edu/">
-            <img id="uconn-logo-minerva" alt="Uconn" src="https://sdat-dev.github.io/resources/WISER-dev/assets/images/header/uconn-logo-alt.png">
->>>>>>> 06ca70b07b75da9ad951d48bc040bc44dd3e8adf
         </a>
     </div>
     <div class="header-title">
@@ -50,11 +43,7 @@
 
     <div id="page-header">
     </div>
-<<<<<<< HEAD
     <!-- <section class="content-wrapper">
-=======
-    <section class="content-wrapper">
->>>>>>> 06ca70b07b75da9ad951d48bc040bc44dd3e8adf
         <div class="display-flex">
             <div class="main-container">
                 <div class="main-content col-xs-12" style="line-height: 1.45;">
@@ -63,31 +52,53 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
     </section> -->
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item active">
-            <a class="nav-link active" id="day1-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-                aria-selected="true">
-                <h4>Day 1</h4>
+            <a class="nav-link active" id="musicians-tab" data-toggle="tab" href="#musicians" role="tab"
+                aria-controls="musicians" aria-selected="true">
+                <h4>Musicians</h4>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="day2-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-                aria-selected="false">
-                <h4>Day 2</h4>
+            <a class="nav-link" id="wiserindustry-tab" data-toggle="tab" href="#wiserindustry-tab" role="tab"
+                aria-controls="wiserindustry" aria-selected="false">
+                <h4>WISER Industry</h4>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="day3-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-                aria-selected="false">
-                <h4>Day 3</h4>
+            <a class="nav-link" id="wiserpresentations-tab" data-toggle="tab" href="#wiserpresentations-tab" role="tab"
+                aria-controls="wiserpresentations" aria-selected="false">
+                <h4>WISER Presentations</h4>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="wiserteam-tab" data-toggle="tab" href="#wiserteam-tab" role="tab"
+                aria-controls="wiserteam" aria-selected="false">
+                <h4>WISER Team</h4>
             </a>
         </li>
     </ul>
-=======
-    </section>
->>>>>>> 06ca70b07b75da9ad951d48bc040bc44dd3e8adf
+    <div id="imageModal">
+        <img id="modal-content">
+    </div>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane active in" id="musicians" role="tabpanel" aria-labelledby="musicians-tab">
+            
+            <img class="rise-photos" style="height: 150px; width: 225px;"
+                src="https://github.com/sdat-dev/RISE/raw/master/img/Day1-Thumbnails/20191118_RISE-4T9A8616.jpg"
+                data-src="https://github.com/sdat-dev/RISE/raw/master/img/Day1-Photos/20191118_RISE-4T9A8616.jpg">
+        </div>
+        <div class="tab-pane fade" id="wiserindustry" role="tabpanel" aria-labelledby="wiserindustry-tab">
+
+        </div>
+        <div class="tab-pane fade" id="wiserpresentations" role="tabpanel" aria-labelledby="wiserpresentations-tab">
+
+        </div>
+        <div class="tab-pane fade" id="wiserteam" role="tabpanel" aria-labelledby="wiserteam-tab">
+
+        </div>
+    </div>
     <footer id="footer">
     </footer>
 
@@ -101,17 +112,26 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <script src="js/common.js"></script>
+    <script>
+        /**      $(".rise-photos").click(function(event){
+             window.open($(this).attr("data-src"), '_blank');
+         })**/
+        let modal = document.getElementById("imageModal");
+        $(".rise-photos").click(function (event) {
+            let src = $(this).attr("data-src");
+            modal.style.display = "block";
+            let modalImg = document.getElementById("modal-content");
+            modalImg.src = src;
+        })
 
-<<<<<<< HEAD
+        modal.onclick = function () {
+            modal.style.display = "none";
+        }
+
+    </script>
     <script>addTopNav("Photo Gallery")</script>
     <script src="js/photogallery.js"></script>
     <script src="js/iFrame.js"></script>
 </body>
 
-=======
-	<script>addTopNav("Photo Gallery")</script>
-	<script src="js/photogallery.js"></script>
-	<script src="js/iFrame.js"></script>
-</body>
->>>>>>> 06ca70b07b75da9ad951d48bc040bc44dd3e8adf
 </html>

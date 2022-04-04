@@ -27,10 +27,10 @@ window.onload = function () {
                 'grid-template-columns: repeat(3, 5fr);'+
                 'gap: 10px;'+
                 'min-width: fit-content;>' + 
+                buildGallery(WISERteam) + 
                 buildGallery(Musicians) + 
                 buildGallery(WISERindustry) + 
                 buildGallery(WISERpresentations) + 
-                buildGallery(WISERteam) + 
                 '</div>';
         let contentElement = document.createElement('div');
         contentElement.classList.add('content');

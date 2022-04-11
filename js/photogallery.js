@@ -20,7 +20,7 @@ window.onload = function () {
         let WISERteam = responses[4].data;
         let webelements = web;
         let content = getContent(webelements);
-        let distincttabs = ['WISER Team','WISER Industry','Musicians','WISER Presentations'];
+        let distincttabs = ['WISER Team','WISER Industry','Musicians','WISER Reception'];
         let tabattribute = 'ABC';
         let activeIndex = 0;
         content += '<div id = "research-area-tabs"><ul class="nav nav-pills" style="font-weight: bold; text-transform: uppercase;padding-bottom: 5px;">' +

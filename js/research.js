@@ -1,6 +1,6 @@
-let filename = "researchareas";
+let filename = "research";
 window.onload = function () {
-    let requestURL = "data/researchareas.json";
+    let requestURL = "data/research.json";
     let datarequestURL = "data/projectslist.json";
     let request = axios.get(requestURL);
     let datarequest = axios.get(datarequestURL);
@@ -12,15 +12,14 @@ window.onload = function () {
         let projects = responses[1].data;
         let webelements = researchareacontent;
         let content = getContent(webelements);
-        content += '<div>' + '<ul style="font-size: smaller;font-weight: 600;">' + buildProjectsList(projects) + '</ul>' + '</div>';
+        var currentUrl = window.location.href;
+        var shortUrl=currentUrl.substring(0,currentUrl.lastIndexOf("/"));
+        content += '<div>' + '<ul style="font-size: smaller;font-weight: 600;">' + buildProjectsList(projects,shortUrl) + '</ul>' + '</div>';
         let contentElement = document.createElement('div');
         contentElement.classList.add('content');
         contentElement.innerHTML = content.trim();
         maincontentContainer.appendChild(contentElement);
         addfooter();
-        var currentUrl = window.location.href;
-        var divID = currentUrl.split("#", 2);
-        //document.getElementById(divID[1].toString()).scrollIntoView(true); Need to figure it out
         let scrollelm = document.getElementById(scrollloc);
         if (scrollloc != null)
             scrollelm.scrollIntoView({ block: "center" });
@@ -29,10 +28,10 @@ window.onload = function () {
     })
 }
 
-let buildProjectsList = function(projectslist) {
+let buildProjectsList = function(projectslist,shortUrl) {
     content = '';
     projectslist.forEach(project => {
-        content += '<li><a href="/projects/' + project.Number + '"> ' + project.Title + '</a></li>'
+        content += '<li><a href="' + shortUrl + '/projects/' + project.Number.toLowerCase() + '"> ' + project.Title + '</a></li>'
     });
     return content;
 }

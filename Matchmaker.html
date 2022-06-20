@@ -46,17 +46,15 @@
             <div class="main-container">
                 <div class="main-content col-xs-12" style="line-height: 1.45;">
                     <h1 class="content-header">
-                        
+                        <center><b>Ualbany Matchmaker </b>(Beta)</center>
                     </h1>
                     <form name="Name" id="Name">
                             Paste the text below:
                         <textarea cols="100" type="text" name="Description" id="Description" size="100" maxlength="1000000" style="border: 1px solid #B9B9B9; height: 200px;"></textarea>
                         <input class="btn btn-primary btn-lg active" type="button" value="Submit" name="submit" id="btn">
-                        <button class="btn btn-primary btn-lg reset" value="Reset" name="reset" type="reset" onclick="this.form.reset();">Reset</button>
+                        <button class="btn btn-primary btn-lg reset" value="Reset" name="reset" type="reset" onclick="refreshPage();">Reset</button>
                     </form>
-                    <div id="table_here">
-
-                    </div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
             </div>
         </div>
@@ -79,6 +77,11 @@
     <script>addTopNav("Renewable Energy")</script>
     <script src="js/iFrame.js"></script>
     <script src="./js/Matcher.js"></script>
+    <script>
+        function refreshPage(){
+            window.location.reload();
+        } 
+    </script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 
